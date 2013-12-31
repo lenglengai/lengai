@@ -1,6 +1,6 @@
-﻿namespace action.core
+﻿namespace common.core
 {
-    public interface IActionHandle
+    public interface IActionRun
     {
         void _runActionMessage(
             ActionMessage nActionMessage);

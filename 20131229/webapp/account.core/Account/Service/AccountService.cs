@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+
 using common.core;
-using action.core;
 
 namespace account.core
 {
-    public class AccountService : HandleSink, IHeadstream
+    public class AccountService : PropertySink, IHeadstream
     {
         public void _headSerialize(ISerialize nSerialize)
         {
@@ -15,10 +12,18 @@ namespace account.core
 
         public string _streamName()
         {
+            return @"accountService";
         }
 
-        public override ulong _getId()
+        public void _runInit()
         {
         }
+
+        public AccountService()
+        {
+            mAccountMgrs = new Dictionary<uint, AccountMgr>();
+        }
+
+        Dictionary<uint, AccountMgr> mAccountMgrs;
     }
 }

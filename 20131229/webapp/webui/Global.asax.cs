@@ -31,8 +31,7 @@ namespace webui
             initService_._runExit();
         }
 
-        void _runPreinit()
-        {
+        void _runPreinit() {
             if (mPreinited) return;
             string systemPath_ =
                 HostingEnvironment.MapPath(@"~");
@@ -42,8 +41,7 @@ namespace webui
             mPreinited = true;
         }
 
-        void _runInit()
-        {
+        void _runInit() {
             if (mInited) return;
             mInited = true;
         }

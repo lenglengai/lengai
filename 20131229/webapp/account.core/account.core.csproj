@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\Service\AccountMgr.cs" />
     <Compile Include="Account\Service\AccountService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -46,13 +47,13 @@
     <None Include="diagram.cd" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\action.core\action.core.csproj">
-      <Project>{140b4c7c-a348-45bd-81cc-90e70f0c18de}</Project>
-      <Name>action.core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\common.core\common.core.csproj">
       <Project>{34e94cdf-3973-47f5-bb30-8c259cbd36ad}</Project>
       <Name>common.core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\weibo.core\weibo.core.csproj">
+      <Project>{d920bee6-7d8e-4c3c-a04c-bab76ccc66c4}</Project>
+      <Name>weibo.core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
