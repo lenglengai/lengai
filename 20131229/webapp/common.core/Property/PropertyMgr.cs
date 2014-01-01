@@ -5,10 +5,17 @@ namespace common.core
     public class PropertyMgr
     {
         public __t _getProperty<__t>(uint nPropertyId)
-            where __t : Property {
+            where __t : IProperty
+        {
             __t result_ = default(__t);
             if (mPropertys.ContainsKey(nPropertyId)) {
                 result_ = (__t)mPropertys[nPropertyId];
+            } else {
+                LogService logService_ =
+                    __singleton<LogService>._instance();
+                string logError = string.Format
+                    (@"_getProperty:{0}", nPropertyId);
+                logService_._logError(TAG, logError);
             }
             return result_;
         }
@@ -18,32 +25,42 @@ namespace common.core
             if (mPropertys.ContainsKey(propertyId_)) {
                 LogService logService_ = 
                     __singleton<LogService>._instance();
-                string logError =
-                    string.Format(@"PropertyMgr _addPropertyId:{0}",
-                        propertyId_);
-                logService_._logError(logError);
-                return;
+                string logError = string.Format
+                    (@"_addPropertyId:{0}", propertyId_);
+                logService_._logError(TAG, logError);
+            } else {
+                IProperty property_ =
+                    nPropertyId._createProperty();
+                property_._setPropertyMgr(this);
+                property_._runPreinit();
+                mPropertys[propertyId_] = property_;
             }
-            Property property_ =
-                nPropertyId._createProperty();
-            property_._setPropertyMgr(this);
-            property_._runPreinit();
-            mPropertys[propertyId_] = property_;
+        }
+
+        public void _setHandleId(uint nHandleId) {
+            mHandleId = nHandleId;
+        }
+
+        public uint _getHandleId() {
+            return mHandleId;
         }
 
         public void _runInit() {
-            foreach (KeyValuePair<uint, Property> i
+            foreach (KeyValuePair<uint, IProperty> i
                 in mPropertys) {
-                Property property_ = i.Value;
+                IProperty property_ = i.Value;
                 property_._runInit();
             }
         }
 
         public PropertyMgr() {
-            mPropertys = 
-                new Dictionary<uint, Property>();
+            mPropertys = new
+                Dictionary<uint, IProperty>();
+            mHandleId = 0;
         }
 
-        Dictionary<uint, Property> mPropertys;
+        Dictionary<uint, IProperty> mPropertys;
+        const string TAG = "PropertyMgr";
+        uint mHandleId;
     }
 }

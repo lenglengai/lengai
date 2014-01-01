@@ -2,8 +2,8 @@
 {
     public interface IActionRun
     {
-        void _runActionMessage(
-            ActionMessage nActionMessage);
+        void _runActionMessage
+            (ActionMessage nActionMessage);
 
         ulong _getId();
     }

@@ -2,7 +2,7 @@
 {
     public interface IPropertyId
     {
-        Property _createProperty();
+        IProperty _createProperty();
 
         uint _getId();
     }

@@ -2,7 +2,7 @@
 
 namespace common.core
 {
-    public class PropertySink
+    public class PropertySink : IHeadstream
     {
         public void _runCreate(PropertyMgr nPropertyMgr) {
             foreach (KeyValuePair<uint, IPropertyId> i in mCreates) {
@@ -10,35 +10,6 @@ namespace common.core
                 nPropertyMgr._addPropertyId(propertyId_);
             }
             nPropertyMgr._runInit();
-        }
-
-        public void _registerCreate(IPropertyId nPropertyId) {
-            uint propertyId_ = nPropertyId._getId();
-            if (mCreates.ContainsKey(propertyId_)) {
-                LogService logService_ =
-                    __singleton<LogService>._instance();
-                string logError =
-                    string.Format(@"PropertySink _registerCreate:{0}",
-                        propertyId_);
-                logService_._logError(logError);
-                return;
-            }
-            mCreates[propertyId_] = nPropertyId;
-        }
-
-        public IPropertyId _getPropertyId(uint nPropertyId) {
-            IPropertyId result_ = null;
-            if (mCreates.ContainsKey(nPropertyId)) {
-                result_ = mCreates[nPropertyId];
-            } else {
-                LogService logService_ =
-                    __singleton<LogService>._instance();
-                string logError =
-                    string.Format(@"PropertySink _getPropertyId:{0}",
-                        nPropertyId);
-                logService_._logError(logError);
-            }
-            return result_;
         }
 
         public PropertySink() {

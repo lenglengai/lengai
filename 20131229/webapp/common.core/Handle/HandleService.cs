@@ -105,7 +105,7 @@ namespace common.core
                     __singleton<LogService>._instance();
                 string logError = string.Format
                     (@"HandleService _initHandle:{0}", nType);
-                logService_._logError(logError);
+                logService_._logError(TAG, "_initHandle", logError);
             }
         }
 
@@ -117,11 +117,13 @@ namespace common.core
         }
 
         public HandleService() {
-            mHandles = new Dictionary<uint, Handle>();
             mPropertySinks = new Dictionary<byte, PropertySink>();
+            mHandles = new Dictionary<uint, Handle>();
+            mHandleTypes = new List<HandleType>();
         }
 
         Dictionary<byte, PropertySink> mPropertySinks;
+        const string TAG = "HandleService";
         Dictionary<uint, Handle> mHandles;
         List<HandleType> mHandleTypes;
     }

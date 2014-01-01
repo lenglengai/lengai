@@ -1,6 +1,6 @@
 ﻿namespace common.core
 {
-    public class Property
+    public class Property : IProperty
     {
         public virtual void _runPreinit() {
         }
@@ -8,8 +8,9 @@
         public virtual void _runInit() {
         }
 
-        public void _setPropertyMgr(
-            PropertyMgr nPropertyMgr) {
+        public void _setPropertyMgr
+            (PropertyMgr nPropertyMgr) 
+        {
             mPropertyMgr = nPropertyMgr;
         }
 

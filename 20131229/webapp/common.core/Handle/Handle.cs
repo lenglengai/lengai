@@ -8,21 +8,19 @@ namespace common.core
             ulong id_ = nActionRun._getId();
             if (!mActionRuns.ContainsKey(id_)) {
                 mActionRuns[id_] = nActionRun;
-            }  else {
+            } else {
                 LogService logService_ =
                     __singleton<LogService>._instance();
-                string logError =
-                    string.Format(@"Handle _register:{0}",
-                        id_);
-                logService_._logError(logError);
+                string logError = string.Format
+                    (@"_register:{0}", id_);
+                logService_._logError(TAG, logError);
             }
         }
 
         public void _runHandle() {
             ActionMgr actionMgr = null;
             lock (mSyncObject) {
-                actionMgr =
-                    mActionMgrs.Dequeue();
+                actionMgr = mActionMgrs.Dequeue();
             }
             IList<ActionMessage> actionMessages =
                 actionMgr._getActionMessages();
@@ -41,31 +39,28 @@ namespace common.core
                 LogService logService_ =
                     __singleton<LogService>._instance();
                 string logError = string.Format
-                    (@"Handle _runActionMessage:{0}", id);
-                logService_._logError(logError);
+                    (@"_runActionMessage:{0}", id);
+                logService_._logError(TAG, logError);
             }
         }
 
-        public void _pushActionMgr(
-            ActionMgr nActionMgr)
-        {
+        public void _pushActionMgr(ActionMgr nActionMgr) {
             lock (mSyncObject) {
                 mActionMgrs.Enqueue(nActionMgr);
             }
         }
 
         public Handle(uint nIndex, byte nType) {
-            mActionRuns =
-                new Dictionary<ulong, IActionRun>();
+            mActionRuns = new Dictionary<ulong, IActionRun>();
             mActionMgrs = new Queue<ActionMgr>();
-            mIndex = nIndex;
+            this._setHandleId(nIndex);
             mType = nType;
         }
 
         readonly object mSyncObject = new object();
         Dictionary<ulong, IActionRun> mActionRuns;
         Queue<ActionMgr> mActionMgrs;
-        uint mIndex;
+        const string TAG = "Handle";
         byte mType;
     }
 }
