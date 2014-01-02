@@ -37,13 +37,12 @@ namespace common.core
                 LogService logService_ =
                     __singleton<LogService>._instance();
                 string logError = string.Format
-                    (@"_getPropertyId:{0}", nName);
+                    (@"_initPropertyId:{0}", nName);
                 logService_._logError(TAG, logError);
             }
         }
 
-        public PropertySink()
-        {
+        public PropertySink() {
             mPropertyIds = new Dictionary<uint, IPropertyId>();
             mPropertyId = new List<string>();
         }

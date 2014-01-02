@@ -4,17 +4,8 @@ using common.core;
 
 namespace account.core
 {
-    public class AccountService : PropertySink, IHeadstream
+    public class AccountService
     {
-        public void _headSerialize(ISerialize nSerialize)
-        {
-        }
-
-        public string _streamName()
-        {
-            return @"accountService";
-        }
-
         public void _runInit()
         {
         }

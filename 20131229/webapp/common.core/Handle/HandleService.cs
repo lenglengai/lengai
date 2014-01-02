@@ -3,18 +3,8 @@ using System.Collections.Generic;
 
 namespace common.core
 {
-    public class HandleService : IHeadstream
+    public class HandleService
     {
-        public void _headSerialize(ISerialize nSerialize)
-        {
-            nSerialize._serialize(ref mHandleTypes, "handleTypes");
-        }
-
-        public string _streamName()
-        {
-            return @"handleService";
-        }
-
         public void _register(Handle nHandle)
         {
             ThreadPool.QueueUserWorkItem(
@@ -118,11 +108,9 @@ namespace common.core
 
         public HandleService() {
             mHandles = new Dictionary<uint, Handle>();
-            mHandleTypes = new List<HandleType>();
         }
 
-        const string TAG = "HandleService";
         Dictionary<uint, Handle> mHandles;
-        List<HandleType> mHandleTypes;
+        const string TAG = "HandleService";
     }
 }

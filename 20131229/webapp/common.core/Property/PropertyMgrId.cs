@@ -1,9 +1,9 @@
 ﻿namespace common.core
 {
-    public class PropertyId<__t> : IPropertyId
-        where __t : IProperty, new()
+    public class PropertyMgrId<__t> : IPropertyMgrId
+        where __t : IPropertyMgr, new()
     {
-        public IProperty _createProperty() {
+        public IPropertyMgr _createPropertyMgr() {
             return new __t();
         }
 
@@ -12,14 +12,14 @@
             return GenerateId._runCommon(className_);
         }
 
-        public uint _getPropertyId() {
+        public uint _getPropertyMgrId() {
             if (0 == TAG) {
                 TAG = _getNameId();
             }
             return TAG;
         }
 
-        public PropertyId() {
+        public PropertyMgrId() {
         }
 
         static uint TAG = 0;

@@ -2,7 +2,7 @@
 
 namespace common.core
 {
-    public class PropertyMgr
+    public class PropertyMgr : IPropertyMgr
     {
         public __t _getProperty<__t>(uint nPropertyId)
             where __t : IProperty

@@ -2,7 +2,7 @@
 
 namespace common.core
 {
-    public class Handle : PropertyMgr
+    public class Handle : IStream
     {
         public void _register(IRunnable nRunnable) {
             mRunnable.Add(nRunnable);
@@ -61,7 +61,7 @@ namespace common.core
             mActionRuns = new Dictionary<ulong, IActionRun>();
             mActionMgrs = new Queue<ActionMgr>();
             mRunnable = new List<IRunnable>();
-            this._setHandleId(nIndex);
+            mIndex = nIndex;
             mType = nType;
         }
 
@@ -70,6 +70,7 @@ namespace common.core
         Queue<ActionMgr> mActionMgrs;
         const string TAG = "Handle";
         List<IRunnable> mRunnable;
+        uint mIndex;
         byte mType;
     }
 }

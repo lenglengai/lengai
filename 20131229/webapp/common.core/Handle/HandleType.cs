@@ -6,15 +6,16 @@ namespace common.core
     {
         public void _serialize(ISerialize nSerialize)
         {
-            nSerialize._serialize(ref mId, "id");
-            nSerialize._serialize(ref mType, "type");
+            nSerialize._serialize
+                (ref mPropertyMgrSink, "propertyMgrSink");
             nSerialize._serialize(ref mCount, "count");
-            nSerialize._serialize(ref mPropertySink, "propertySink");
+            nSerialize._serialize(ref mType, "type");
+            nSerialize._serialize(ref mId, "id");
         }
 
-        public PropertySink _getPropertySink()
+        public PropertyMgrSink _getPropertyMgrSink()
         {
-            return mPropertySink;
+            return mPropertyMgrSink;
         }
 
         public byte _getCount() {
@@ -30,13 +31,14 @@ namespace common.core
         }
 
         public HandleType() {
-            mPropertySink = null;
+            mPropertyMgrSink = null;
             mCount = 0;
             mType = 0;
             mId = 0;
         }
         
-        PropertySink mPropertySink;
+        PropertyMgrSink
+            mPropertyMgrSink;
         byte mCount;
         byte mType;
         uint mId;
