@@ -5,6 +5,6 @@
         void _runActionMessage
             (ActionMessage nActionMessage);
 
-        ulong _getId();
+        ulong _getActionId();
     }
 }

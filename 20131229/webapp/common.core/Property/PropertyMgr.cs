@@ -21,7 +21,7 @@ namespace common.core
         }
 
         public void _addPropertyId(IPropertyId nPropertyId) {
-            uint propertyId_ = nPropertyId._getId();
+            uint propertyId_ = nPropertyId._getPropertyId();
             if (mPropertys.ContainsKey(propertyId_)) {
                 LogService logService_ = 
                     __singleton<LogService>._instance();
@@ -37,14 +37,6 @@ namespace common.core
             }
         }
 
-        public void _setHandleId(uint nHandleId) {
-            mHandleId = nHandleId;
-        }
-
-        public uint _getHandleId() {
-            return mHandleId;
-        }
-
         public void _runInit() {
             foreach (KeyValuePair<uint, IProperty> i
                 in mPropertys) {
@@ -56,11 +48,9 @@ namespace common.core
         public PropertyMgr() {
             mPropertys = new
                 Dictionary<uint, IProperty>();
-            mHandleId = 0;
         }
 
         Dictionary<uint, IProperty> mPropertys;
         const string TAG = "PropertyMgr";
-        uint mHandleId;
     }
 }

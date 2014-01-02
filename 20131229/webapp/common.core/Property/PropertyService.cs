@@ -5,7 +5,7 @@ namespace common.core
     public class PropertyService
     {
         public void _registerPropertyId(IPropertyId nPropertyId) {
-            uint propertyId_ = nPropertyId._getId();
+            uint propertyId_ = nPropertyId._getPropertyId();
             if (mPropertyIds.ContainsKey(propertyId_)) {
                 LogService logService_ =
                     __singleton<LogService>._instance();

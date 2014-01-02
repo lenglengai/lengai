@@ -4,6 +4,6 @@
     {
         IProperty _createProperty();
 
-        uint _getId();
+        uint _getPropertyId();
     }
 }

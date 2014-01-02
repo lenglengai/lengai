@@ -117,12 +117,10 @@ namespace common.core
         }
 
         public HandleService() {
-            mPropertySinks = new Dictionary<byte, PropertySink>();
             mHandles = new Dictionary<uint, Handle>();
             mHandleTypes = new List<HandleType>();
         }
 
-        Dictionary<byte, PropertySink> mPropertySinks;
         const string TAG = "HandleService";
         Dictionary<uint, Handle> mHandles;
         List<HandleType> mHandleTypes;

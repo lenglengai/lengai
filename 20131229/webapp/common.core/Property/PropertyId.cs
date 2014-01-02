@@ -8,7 +8,7 @@
         }
 
         public static uint _getNameId() {
-            string tag = 
+            string className_ = typeof(__t).FullName;
             return GenerateId._runCommon(className_);
         }
 

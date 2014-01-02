@@ -1,6 +1,11 @@
-﻿namespace common.core
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace common.core
 {
-    public interface IProperty
+    public interface IHandleProperty
     {
         void _runPreinit();
 

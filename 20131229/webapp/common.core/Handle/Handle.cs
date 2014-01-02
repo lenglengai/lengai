@@ -4,8 +4,12 @@ namespace common.core
 {
     public class Handle : PropertyMgr
     {
+        public void _register(IRunnable nRunnable) {
+            mRunnable.Add(nRunnable);
+        }
+
         public void _register(IActionRun nActionRun) {
-            ulong id_ = nActionRun._getId();
+            ulong id_ = nActionRun._getActionId();
             if (!mActionRuns.ContainsKey(id_)) {
                 mActionRuns[id_] = nActionRun;
             } else {
@@ -28,6 +32,9 @@ namespace common.core
                 this._runActionMessage(i);
             }
             actionMessages.Clear();
+            foreach (IRunnable i in mRunnable) {
+                i._exeRun();
+            }
         }
 
         void _runActionMessage(ActionMessage nActionMessage) {
@@ -53,6 +60,7 @@ namespace common.core
         public Handle(uint nIndex, byte nType) {
             mActionRuns = new Dictionary<ulong, IActionRun>();
             mActionMgrs = new Queue<ActionMgr>();
+            mRunnable = new List<IRunnable>();
             this._setHandleId(nIndex);
             mType = nType;
         }
@@ -61,6 +69,7 @@ namespace common.core
         Dictionary<ulong, IActionRun> mActionRuns;
         Queue<ActionMgr> mActionMgrs;
         const string TAG = "Handle";
+        List<IRunnable> mRunnable;
         byte mType;
     }
 }

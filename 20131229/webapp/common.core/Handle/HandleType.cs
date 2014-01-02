@@ -1,4 +1,6 @@
-﻿namespace common.core
+﻿using System.Collections.Generic;
+
+namespace common.core
 {
     public class HandleType : IStream
     {
@@ -7,6 +9,12 @@
             nSerialize._serialize(ref mId, "id");
             nSerialize._serialize(ref mType, "type");
             nSerialize._serialize(ref mCount, "count");
+            nSerialize._serialize(ref mPropertySink, "propertySink");
+        }
+
+        public PropertySink _getPropertySink()
+        {
+            return mPropertySink;
         }
 
         public byte _getCount() {
@@ -22,11 +30,13 @@
         }
 
         public HandleType() {
+            mPropertySink = null;
             mCount = 0;
             mType = 0;
             mId = 0;
         }
-
+        
+        PropertySink mPropertySink;
         byte mCount;
         byte mType;
         uint mId;

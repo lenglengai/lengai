@@ -58,8 +58,10 @@
     <Compile Include="Handle\HandleType.cs" />
     <Compile Include="Handle\HandleType_.cs" />
     <Compile Include="Handle\IActionRun.cs" />
-    <Compile Include="Property\IProperty.cs" />
+    <Compile Include="Handle\IRunnable.cs" />
+    <Compile Include="Handle\IHandleProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property\IProperty.cs" />
     <Compile Include="Property\PropertyService.cs" />
     <Compile Include="Property\IPropertyId.cs" />
     <Compile Include="Property\Property.cs" />
@@ -86,6 +88,7 @@
     <Content Include="Config\log.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Config\propertyId.xml" />
     <Content Include="Config\sqlConfig.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
