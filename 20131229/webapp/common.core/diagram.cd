@@ -1,41 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="common.core.PropertyMgrId&lt;__t&gt;" Collapsed="true">
+  <Class Name="common.core.ContextOption" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAABAAAAAAAAAAAAAAAAEAAAAAAAAABAAAA=</HashCode>
-      <FileName>Property\PropertyMgrId.cs</FileName>
+      <HashCode>AAAACAgAAAAEAAAAAAACAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Handle\ContextOption.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="common.core.PropertyMgrSink" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+  <Class Name="common.core.ContextService" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAABAAAAAIACAAAAAAAAAAAAABAAAAAIACA=</HashCode>
-      <FileName>Property\PropertyMgrSink.cs</FileName>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAACAAAgAAAAAAAAAEA=</HashCode>
+      <FileName>Handle\ContextService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="common.core.HandleOption" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAgAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Handle\HandleOption.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="common.core.PropertyMgrs">
-    <Position X="2.25" Y="2.5" Width="1.5" />
+  <Class Name="common.core.HandleService" Collapsed="true">
+    <Position X="2.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAAIAAAAAAAABAAAAAgAAAAAIAAAA=</HashCode>
-      <FileName>Property\PropertyMgrs.cs</FileName>
+      <HashCode>AAAACAgAAAAAAAAAQAAAABAAACAAAAAAAAQACAAAAAA=</HashCode>
+      <FileName>Handle\HandleService.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="common.core.IPropertyMgrId" Collapsed="true">
-    <Position X="2" Y="0.5" Width="1.5" />
+  <Class Name="common.core.Action">
+    <Position X="0.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
-      <FileName>Property\IPropertyMgrId.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Handle\Action.cs</FileName>
     </TypeIdentifier>
-  </Interface>
-  <Interface Name="common.core.IPropertyMgr" Collapsed="true">
-    <Position X="2.25" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAAAAIAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
-      <FileName>Property\IPropertyMgr.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
+    <Lollipop Position="0.2" />
+  </Class>
   <Font Name="Microsoft YaHei UI" Size="9" />
 </ClassDiagram>

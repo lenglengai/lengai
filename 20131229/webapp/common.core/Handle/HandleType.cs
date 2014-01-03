@@ -7,15 +7,14 @@ namespace common.core
         public void _serialize(ISerialize nSerialize)
         {
             nSerialize._serialize
-                (ref mPropertyMgrSink, "propertyMgrSink");
+                (ref mContextOption, "contextOption");
             nSerialize._serialize(ref mCount, "count");
             nSerialize._serialize(ref mType, "type");
             nSerialize._serialize(ref mId, "id");
         }
 
-        public PropertyMgrSink _getPropertyMgrSink()
-        {
-            return mPropertyMgrSink;
+        public ContextOption _getContextOption() {
+            return mContextOption;
         }
 
         public byte _getCount() {
@@ -31,14 +30,14 @@ namespace common.core
         }
 
         public HandleType() {
-            mPropertyMgrSink = null;
+            mContextOption = null;
             mCount = 0;
             mType = 0;
             mId = 0;
         }
-        
-        PropertyMgrSink
-            mPropertyMgrSink;
+
+        ContextOption
+            mContextOption;
         byte mCount;
         byte mType;
         uint mId;

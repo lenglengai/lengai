@@ -4,14 +4,25 @@ namespace common.core
 {
     public class HandleOption : IHeadstream
     {
-        public void _headSerialize(ISerialize nSerialize)
-        {
+        public void _headSerialize(ISerialize nSerialize) {
             nSerialize._serialize(ref mHandleTypes, "handleTypes");
         }
 
-        public string _streamName()
-        {
+        public string _streamName() {
             return @"handleOption";
+        }
+
+        public void _initHandle(HandleService nHandleService) {
+            uint index = 1;
+            foreach (HandleType i in mHandleTypes) {
+                ContextOption contextOption = i._getContextOption();
+                for (byte j = 0; j < i._getCount(); ++j) {
+                    Handle handle = new Handle(index, i._getType());
+                    contextOption._initHandle(handle);
+                    nHandleService._addHandle(index, handle);
+                    ++index;
+                }
+            }
         }
 
         public HandleOption() {

@@ -2,72 +2,38 @@
 
 namespace common.core
 {
-    public class Handle : IStream
+    public class Handle
     {
-        public void _register(IRunnable nRunnable) {
+        public void _initContext(IContextId nContextId) {
+            uint contextId_ = nContextId._getContextId();
+            if (mContexts.ContainsKey(contextId_)) {
+                LogService logService_ =
+                    __singleton<LogService>._instance();
+                string logError = string.Format
+                    (@"_initContext:{0}", contextId_);
+                logService_._logError(TAG, logError);
+            } else {
+                Context context_ = nContextId._createContext();
+                context_._setHandle(this);
+                mContexts[contextId_] = context_;
+            }
+        }
+
+        public void _addRunnable(IRunnable nRunnable) {
             mRunnable.Add(nRunnable);
         }
 
-        public void _register(IActionRun nActionRun) {
-            ulong id_ = nActionRun._getActionId();
-            if (!mActionRuns.ContainsKey(id_)) {
-                mActionRuns[id_] = nActionRun;
-            } else {
-                LogService logService_ =
-                    __singleton<LogService>._instance();
-                string logError = string.Format
-                    (@"_register:{0}", id_);
-                logService_._logError(TAG, logError);
-            }
-        }
-
         public void _runHandle() {
-            ActionMgr actionMgr = null;
-            lock (mSyncObject) {
-                actionMgr = mActionMgrs.Dequeue();
-            }
-            IList<ActionMessage> actionMessages =
-                actionMgr._getActionMessages();
-            foreach (ActionMessage i in actionMessages) {
-                this._runActionMessage(i);
-            }
-            actionMessages.Clear();
-            foreach (IRunnable i in mRunnable) {
-                i._exeRun();
-            }
-        }
-
-        void _runActionMessage(ActionMessage nActionMessage) {
-            ulong id = nActionMessage._getId();
-            if (mActionRuns.ContainsKey(id)) {
-                IActionRun actionRun = mActionRuns[id];
-                actionRun._runActionMessage(nActionMessage);
-            } else {
-                LogService logService_ =
-                    __singleton<LogService>._instance();
-                string logError = string.Format
-                    (@"_runActionMessage:{0}", id);
-                logService_._logError(TAG, logError);
-            }
-        }
-
-        public void _pushActionMgr(ActionMgr nActionMgr) {
-            lock (mSyncObject) {
-                mActionMgrs.Enqueue(nActionMgr);
-            }
         }
 
         public Handle(uint nIndex, byte nType) {
-            mActionRuns = new Dictionary<ulong, IActionRun>();
-            mActionMgrs = new Queue<ActionMgr>();
+            mContexts = new Dictionary<uint, Context>();
             mRunnable = new List<IRunnable>();
             mIndex = nIndex;
             mType = nType;
         }
 
-        readonly object mSyncObject = new object();
-        Dictionary<ulong, IActionRun> mActionRuns;
-        Queue<ActionMgr> mActionMgrs;
+        Dictionary<uint, Context> mContexts;
         const string TAG = "Handle";
         List<IRunnable> mRunnable;
         uint mIndex;

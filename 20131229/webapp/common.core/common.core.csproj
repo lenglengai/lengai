@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handle\Action.cs" />
     <Compile Include="BoolSave\BoolSave.cs" />
     <Compile Include="BoolSave\BoolStruct.cs" />
     <Compile Include="BoolSave\BoolType_.cs" />
@@ -51,28 +52,18 @@
     <Compile Include="Common\_RunSlot.cs" />
     <Compile Include="Common\__singleton.cs" />
     <Compile Include="Common\__tuple.cs" />
-    <Compile Include="Handle\HandleOption.cs" />
-    <Compile Include="Handle\ActionMessage.cs" />
-    <Compile Include="Handle\ActionMgr.cs" />
-    <Compile Include="Handle\Handle.cs" />
     <Compile Include="Handle\HandleService.cs" />
+    <Compile Include="Handle\HandleOption.cs" />
+    <Compile Include="Handle\ContextService.cs" />
+    <Compile Include="Handle\ContextOption.cs" />
+    <Compile Include="Handle\ContextId.cs" />
+    <Compile Include="Handle\Context.cs" />
+    <Compile Include="Handle\Handle.cs" />
     <Compile Include="Handle\HandleType.cs" />
     <Compile Include="Handle\HandleType_.cs" />
-    <Compile Include="Handle\IActionRun.cs" />
+    <Compile Include="Handle\IContextId.cs" />
     <Compile Include="Handle\IRunnable.cs" />
-    <Compile Include="Property\PropertyMgrs.cs" />
-    <Compile Include="Property\PropertyMgrSink.cs" />
-    <Compile Include="Property\IPropertyMgr.cs" />
-    <Compile Include="Property\IPropertyMgrId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Property\PropertyMgrId.cs" />
-    <Compile Include="Property\IProperty.cs" />
-    <Compile Include="Property\PropertyService.cs" />
-    <Compile Include="Property\IPropertyId.cs" />
-    <Compile Include="Property\Property.cs" />
-    <Compile Include="Property\PropertyId.cs" />
-    <Compile Include="Property\PropertyMgr.cs" />
-    <Compile Include="Property\PropertySink.cs" />
     <Compile Include="Serialize\Headstream\IHeadstream.cs" />
     <Compile Include="Serialize\Headstream\ISerialize.cs" />
     <Compile Include="Serialize\Headstream\IStream.cs" />
