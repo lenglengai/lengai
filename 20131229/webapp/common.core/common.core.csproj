@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handle\ActionService.cs" />
+    <Compile Include="Handle\ActionType_.cs" />
+    <Compile Include="Handle\ActionBody.cs" />
+    <Compile Include="Handle\ActionHeader.cs" />
     <Compile Include="Handle\Action.cs" />
     <Compile Include="BoolSave\BoolSave.cs" />
     <Compile Include="BoolSave\BoolStruct.cs" />
