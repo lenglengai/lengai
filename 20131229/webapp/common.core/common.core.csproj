@@ -42,11 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handle\ActionService.cs" />
-    <Compile Include="Handle\ActionType_.cs" />
-    <Compile Include="Handle\ActionBody.cs" />
-    <Compile Include="Handle\ActionHeader.cs" />
-    <Compile Include="Handle\Action.cs" />
+    <Compile Include="Action\ActionService.cs" />
+    <Compile Include="Action\ActionType_.cs" />
+    <Compile Include="Action\ActionBody.cs" />
+    <Compile Include="Action\ActionHeader.cs" />
+    <Compile Include="Action\Action.cs" />
     <Compile Include="BoolSave\BoolSave.cs" />
     <Compile Include="BoolSave\BoolStruct.cs" />
     <Compile Include="BoolSave\BoolType_.cs" />
@@ -58,14 +58,14 @@
     <Compile Include="Common\__tuple.cs" />
     <Compile Include="Handle\HandleService.cs" />
     <Compile Include="Handle\HandleOption.cs" />
-    <Compile Include="Handle\ContextService.cs" />
-    <Compile Include="Handle\ContextOption.cs" />
-    <Compile Include="Handle\ContextId.cs" />
-    <Compile Include="Handle\Context.cs" />
+    <Compile Include="Context\ContextService.cs" />
+    <Compile Include="Context\ContextOption.cs" />
+    <Compile Include="Context\ContextId.cs" />
+    <Compile Include="Context\Context.cs" />
     <Compile Include="Handle\Handle.cs" />
     <Compile Include="Handle\HandleType.cs" />
     <Compile Include="Handle\HandleType_.cs" />
-    <Compile Include="Handle\IContextId.cs" />
+    <Compile Include="Context\IContextId.cs" />
     <Compile Include="Handle\IRunnable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialize\Headstream\IHeadstream.cs" />
@@ -76,6 +76,7 @@
     <Compile Include="Service\Init\InitService.cs" />
     <Compile Include="Service\Log\LogService.cs" />
     <Compile Include="Service\Setting\SettingService.cs" />
+    <Compile Include="Action\_ServerHandle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="diagram.cd" />
@@ -88,7 +89,10 @@
     <Content Include="Config\log.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Config\propertyId.xml" />
+    <Content Include="Config\contextIds.xml" />
+    <Content Include="Config\settingConfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Config\sqlConfig.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

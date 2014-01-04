@@ -2,6 +2,6 @@
 {
     public interface IRunnable
     {
-        void _exeRun();
+        void _startRun();
     }
 }

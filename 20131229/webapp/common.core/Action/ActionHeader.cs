@@ -6,6 +6,14 @@
             nSerialize._serialize(ref mActionBody, "actionBody");
         }
 
+        public ActionBody _getActionBody() {
+            return mActionBody;
+        }
+
+        public uint _getContextId() {
+            return mContextId;
+        }
+
         public ActionHeader() {
             mActionBody = new ActionBody();
         }

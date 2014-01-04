@@ -5,6 +5,21 @@ namespace common.core
 {
     public class HandleService
     {
+        public void _addActionHeader(uint nHandle,
+            ActionHeader nActionHeader)
+        {
+            if (mHandles.ContainsKey(nHandle)){
+                Handle handle = mHandles[nHandle];
+                handle._addActionHeader(nActionHeader);
+            } else {
+                LogService logService_ =
+                    __singleton<LogService>._instance();
+                string logError = string.Format
+                    (@"_addActionHeader:{0}", nHandle);
+                logService_._logError(TAG, logError);
+            }
+        }
+
         public void _initHandle() {
             HandleOption handleOption = new HandleOption();
             this._initConfig(handleOption);

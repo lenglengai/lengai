@@ -58,7 +58,7 @@ namespace common.core
         }
 
         static uint _runHash(string nKey, uint nOffset) {
-            byte[] bytes = Encoding.UTF8.GetBytes(nKey.ToUpper());
+            byte[] bytes = Encoding.ASCII.GetBytes(nKey.ToUpper());
             uint seed1 = 0x7FED7FED;
             uint seed2 = 0xEEEEEEEE;
             uint ch;

@@ -2,22 +2,58 @@
 
 namespace common.core
 {
-    public class SettingService
+    public class SettingService : IHeadstream
     {
-        public bool _checkServerId(int nServerId) {
+        public void _headSerialize(ISerialize nSerialize)
+        {
+            nSerialize._serialize(ref mServerCount, "serverCount");
+            nSerialize._serialize(ref mServerId, "serverId");
+            nSerialize._serialize(ref mVersion, "version");
+        }
+
+        public string _streamName()
+        {
+            return "settingService";
+        }
+
+        public bool _checkServerId(uint nServerId) {
             return (mServerId == nServerId);
         }
 
-        public void _setServerId(int nServerId) {
+        public void _setServerId(uint nServerId) {
             mServerId = nServerId;
         }
 
-        public int _getServerId() {
+        public uint _getServerId() {
             return mServerId;
+        }
+
+        public void _setServerCount(uint nServerCount) {
+            mServerCount = nServerCount;
+        }
+
+        public uint _getServerCount() {
+            return mServerCount;
+        }
+
+        public uint _getVersion() {
+            return mVersion;
         }
 
         public void _runPreinit(string nPath = null) {
             mSystemPath = Path.Combine(nPath, @"bin");
+            this._initConfig();
+        }
+
+        void _initConfig() {
+            string streamName_ = this._streamName();
+            string settingConfigUrl_ 
+                = @"Config/settingConfig.xml";
+            XmlReader xmlReader_ = new XmlReader();
+            xmlReader_._openUrl(settingConfigUrl_);
+            xmlReader_._selectStream(streamName_);
+            this._headSerialize(xmlReader_);
+            xmlReader_._runClose();
         }
 
         public string _systemPath() {
@@ -26,10 +62,14 @@ namespace common.core
 
         public SettingService() {
             mSystemPath = null;
+            mServerCount = 0;
             mServerId = 0;
+            mVersion = 0;
         }
 
         string mSystemPath;
-        int mServerId;
+        uint mServerCount;
+        uint mServerId;
+        uint mVersion;
     }
 }
