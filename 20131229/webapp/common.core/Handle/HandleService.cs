@@ -36,6 +36,10 @@ namespace common.core
             xmlReader_._runClose();
         }
 
+        public void _addHandleCount(uint nIndex, uint nCount) {
+            mHandleCount[nIndex] = nCount;
+        }
+
         public void _addHandle(uint nIndex, Handle nHandle) {
             mHandles[nIndex] = nHandle;
         }
@@ -51,10 +55,25 @@ namespace common.core
             handle_._runHandle();
         }
 
+        public void _runPreinit() {
+            ActionService actionService_ =
+                __singleton<ActionService>._instance();
+            actionService_._runPreinit();
+            ContextService contextService_ =
+                __singleton<ContextService>._instance();
+            contextService_._runPreinit();
+        }
+
+        public void _runInit() {
+            this._initHandle();
+        }
+
         public HandleService() {
+            mHandleCount = new Dictionary<uint, uint>();
             mHandles = new Dictionary<uint, Handle>();
         }
 
+        Dictionary<uint, uint> mHandleCount;
         Dictionary<uint, Handle> mHandles;
         const string TAG = "HandleService";
     }

@@ -43,11 +43,12 @@ namespace common.core
                 actionHeader = mActionHeaders.Dequeue();
             }
             uint contextId = actionHeader._getContextId();
+            uint actionId = actionHeader._getActionId();
             if (mContexts.ContainsKey(contextId)) {
                 Context context = mContexts[contextId];
-                ActionBody actionBody = 
+                IActionBody actionBody = 
                     actionHeader._getActionBody();
-                context._runActionBody(actionBody);
+                context._runActionBody(actionId, actionBody);
             } else {
                 LogService logService_ =
                     __singleton<LogService>._instance();

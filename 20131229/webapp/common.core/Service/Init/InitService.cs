@@ -9,10 +9,15 @@
             SettingService settingService_ =
                 __singleton<SettingService>._instance();
             settingService_._runPreinit(nPath);
+            HandleService handleService_ =
+                __singleton<HandleService>._instance();
+            handleService_._runPreinit();
         }
 
         public void _runInit() {
-
+            HandleService handleService_ =
+                __singleton<HandleService>._instance();
+            handleService_._runInit();
         }
 
         public _RunSlot m_tRunExit;

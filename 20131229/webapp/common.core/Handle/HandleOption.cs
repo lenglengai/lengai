@@ -15,6 +15,7 @@ namespace common.core
         public void _initHandle(HandleService nHandleService) {
             uint index = 1;
             foreach (HandleType i in mHandleTypes) {
+                nHandleService._addHandleCount(i._getId(), i._getCount());
                 ContextOption contextOption = i._getContextOption();
                 for (byte j = 0; j < i._getCount(); ++j) {
                     Handle handle = new Handle(index, i._getType());

@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Action\ActionService.cs" />
     <Compile Include="Action\ActionType_.cs" />
-    <Compile Include="Action\ActionBody.cs" />
+    <Compile Include="Action\IActionBody.cs" />
     <Compile Include="Action\ActionHeader.cs" />
     <Compile Include="Action\Action.cs" />
     <Compile Include="BoolSave\BoolSave.cs" />
@@ -77,6 +77,7 @@
     <Compile Include="Service\Log\LogService.cs" />
     <Compile Include="Service\Setting\SettingService.cs" />
     <Compile Include="Action\_ServerHandle.cs" />
+    <Compile Include="Action\_RunActionBody.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="diagram.cd" />
@@ -89,7 +90,7 @@
     <Content Include="Config\log.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Config\contextIds.xml" />
+    <None Include="Config\contextIds.xml" />
     <Content Include="Config\settingConfig.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

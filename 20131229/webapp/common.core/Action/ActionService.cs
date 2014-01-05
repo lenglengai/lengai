@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace common.core
 {
@@ -24,6 +21,18 @@ namespace common.core
             }
         }
 
+        public void _addServerHandle(uint nType, _ServerHandle nServerHandle) {
+            if (mServerHandles.ContainsKey(nType)) {
+                LogService logService_ =
+                    __singleton<LogService>._instance();
+                string logError = string.Format
+                    (@"_addServerHandle:{0}", nType);
+                logService_._logError(TAG, logError);
+            } else {
+                mServerHandles[nType] = nServerHandle;
+            }
+        }
+
         __tuple<uint, uint> _serverHandle(uint nType, uint nCount) {
             if (mServerHandles.ContainsKey(nType)) {
                 _ServerHandle serverHandle = mServerHandles[nType];
@@ -36,6 +45,10 @@ namespace common.core
                 logService_._logError(TAG, logError);
             }
             return null;
+        }
+
+        public void _runPreinit() {
+
         }
 
         public ActionService() {

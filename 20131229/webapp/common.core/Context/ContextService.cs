@@ -31,6 +31,10 @@ namespace common.core
             return result_;
         }
 
+        public void _runPreinit() {
+
+        }
+
         public ContextService() {
             mContextIds = new Dictionary<uint, IContextId>();
         }
