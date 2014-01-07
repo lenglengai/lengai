@@ -36,6 +36,20 @@ namespace common.core
             xmlReader_._runClose();
         }
 
+        public uint _getHandleCount(uint nIndex) {
+            uint result = 0;
+            if (mHandleCount.ContainsKey(nIndex)) {
+                result = mHandleCount[nIndex];
+            } else {
+                LogService logService_ =
+                    __singleton<LogService>._instance();
+                string logError = string.Format
+                    (@"_getHandleCount:{0}", nIndex);
+                logService_._logError(TAG, logError);
+            }
+            return result;
+        }
+
         public void _addHandleCount(uint nIndex, uint nCount) {
             mHandleCount[nIndex] = nCount;
         }

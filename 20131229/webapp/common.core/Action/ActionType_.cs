@@ -2,7 +2,7 @@
 {
     public struct ActionType_
     {
-        const uint mError_ = 0;
-        const uint mAccount_ = 1;
+        public const uint mError_ = 0;
+        public const uint mAccount_ = 1;
     }
 }
