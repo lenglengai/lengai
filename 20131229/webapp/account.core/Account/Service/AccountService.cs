@@ -25,7 +25,7 @@ namespace account.core
             return accountMgr_._loginAccount(nAccountName,
                 nPassward, nDeviceType);
         }
-
+        
         public void _runPreinit() {
             ActionService actionService_ =
                 __singleton<ActionService>._instance();

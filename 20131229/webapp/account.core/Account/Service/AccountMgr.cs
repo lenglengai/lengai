@@ -61,6 +61,26 @@ namespace account.core
             nAccountLoginC.m_tDeviceType = (int)deviceStatus_._getType();
         }
 
+        Account _loginAccount(AccountLoginB nAccountLoginB, uint nDeviceType) {
+            Account result_ = null;
+            uint accountId = nAccountLoginB._getAccountId();
+            if (mAccounts.ContainsKey(accountId))
+            {
+                result_ = mAccounts[accountId];
+            }
+            if (null == result_)
+            {
+                result_ = nAccountLoginB._createAccount();
+                result_._addDeviceType(nDeviceType);
+                result_._setAccountMgr(this);
+                AccountCreator accountCreator_ = __singleton<AccountCreator>._instance();
+                accountCreator_._runCreate(result_);
+                result_.m_tRunLogin();
+                mAccounts[accountId] = result_;
+            }
+            return result_;
+        }
+
         uint _checkDevice(uint nDeviceType) {
             uint result_ = AccountError_.mSucess_;
             DeviceService deviceService_ = 

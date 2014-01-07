@@ -46,6 +46,7 @@
     <Compile Include="Account\Message\AccountError_.cs" />
     <Compile Include="Account\Service\AccountMgr.cs" />
     <Compile Include="Account\Service\AccountService.cs" />
+    <Compile Include="Account\Service\DeviceState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
