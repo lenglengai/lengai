@@ -49,8 +49,7 @@ namespace common.core
 
         void _initConfig() {
             string streamName_ = this._streamName();
-            string settingConfigUrl_ 
-                = @"Config/settingConfig.xml";
+            string settingConfigUrl_ = @"Config/setting.xml";
             XmlReader xmlReader_ = new XmlReader();
             xmlReader_._openUrl(settingConfigUrl_);
             xmlReader_._selectStream(streamName_);

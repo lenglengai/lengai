@@ -7,14 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{17F57D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common.core", "common.core\common.core.csproj", "{34E94CDF-3973-47F5-BB30-8C259CBD36AD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{07B3AF8E-8CE9-433D-94B2-780533EE5FB9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "account.core", "account.core\account.core.csproj", "{793C0AB6-17DA-48F9-B2BC-CFF02B0A8E78}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "weibo", "weibo", "{CFF3A36A-5BE0-4BB9-89D4-3D1E0E17BFB8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weibo.core", "weibo.core\weibo.core.csproj", "{D920BEE6-7D8E-4C3C-A04C-BAB76CCC66C4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,21 +21,11 @@ Global
 		{34E94CDF-3973-47F5-BB30-8C259CBD36AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34E94CDF-3973-47F5-BB30-8C259CBD36AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34E94CDF-3973-47F5-BB30-8C259CBD36AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{793C0AB6-17DA-48F9-B2BC-CFF02B0A8E78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{793C0AB6-17DA-48F9-B2BC-CFF02B0A8E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{793C0AB6-17DA-48F9-B2BC-CFF02B0A8E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{793C0AB6-17DA-48F9-B2BC-CFF02B0A8E78}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D920BEE6-7D8E-4C3C-A04C-BAB76CCC66C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D920BEE6-7D8E-4C3C-A04C-BAB76CCC66C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D920BEE6-7D8E-4C3C-A04C-BAB76CCC66C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D920BEE6-7D8E-4C3C-A04C-BAB76CCC66C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{34E94CDF-3973-47F5-BB30-8C259CBD36AD} = {17F57D75-0FBF-414C-AE22-37FA8B960D1E}
-		{793C0AB6-17DA-48F9-B2BC-CFF02B0A8E78} = {07B3AF8E-8CE9-433D-94B2-780533EE5FB9}
-		{D920BEE6-7D8E-4C3C-A04C-BAB76CCC66C4} = {CFF3A36A-5BE0-4BB9-89D4-3D1E0E17BFB8}
 	EndGlobalSection
 EndGlobal

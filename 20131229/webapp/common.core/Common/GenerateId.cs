@@ -5,8 +5,7 @@ namespace common.core
 {
     public class GenerateId
     {
-        public static ulong _runId(uint nId0,
-            uint nId1)
+        public static ulong _runId(uint nId0, uint nId1)
         {
             ulong result = nId0;
             result <<= 32;
@@ -19,18 +18,6 @@ namespace common.core
             DateTime begTime_ = new DateTime(2014, 1, 1);
             TimeSpan timeSpan = nowTime_ - begTime_;
             return (uint)timeSpan.TotalSeconds;
-        }
-
-        public static uint _runCommon(string nName) {
-            return _runHash(nName, 0x100);
-        }
-
-        public static uint _runComputer() {
-            return _runCommon(@"computer");
-        }
-        
-        public static uint _runCellphone() {
-            return _runCommon(@"cellphone");
         }
 
         public static uint _runNameId(string nName) {
@@ -55,6 +42,18 @@ namespace common.core
 
         public static uint _runTableId(string nName) {
             return _runHash(nName, 0x250);
+        }
+
+        public static uint _runCommon(string nName) {
+            return _runHash(nName, 0x100);
+        }
+
+        public static uint _runComputer() {
+            return _runCommon(@"computer");
+        }
+
+        public static uint _runCellphone() {
+            return _runCommon(@"cellphone");
         }
 
         static uint _runHash(string nKey, uint nOffset) {

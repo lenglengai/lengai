@@ -39,15 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\AccountSql\AccountCreateB.cs" />
-    <Compile Include="Account\AccountSql\AccountLoginB.cs" />
-    <Compile Include="Account\Message\AccountCreateS.cs" />
-    <Compile Include="Account\Message\AccountLoginC.cs" />
-    <Compile Include="Account\Service\Account.cs" />
-    <Compile Include="Account\Message\AccountError_.cs" />
-    <Compile Include="Account\Service\AccountMgr.cs" />
-    <Compile Include="Account\Service\AccountService.cs" />
-    <Compile Include="Account\Service\DeviceState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -57,10 +48,6 @@
     <ProjectReference Include="..\common.core\common.core.csproj">
       <Project>{34e94cdf-3973-47f5-bb30-8c259cbd36ad}</Project>
       <Name>common.core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\weibo.core\weibo.core.csproj">
-      <Project>{d920bee6-7d8e-4c3c-a04c-bab76ccc66c4}</Project>
-      <Name>weibo.core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

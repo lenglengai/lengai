@@ -12,11 +12,5 @@ namespace webui.Controllers
 {
     public class NewsController : ApiController
     {
-        protected bool _checkPacket(Packet nPacket)
-        {
-            SettingService settingService =
-                __singleton<SettingService>._instance();
-            return settingService._checkVersion(nPacket.m_tVersion);
-        }
     }
 }

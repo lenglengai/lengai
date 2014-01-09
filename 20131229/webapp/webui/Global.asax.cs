@@ -26,27 +26,19 @@ namespace webui
 
         protected void Application_End()
         {
-            InitService initService_ =
-                __singleton<InitService>._instance();
+            InitService initService_ = __singleton<InitService>._instance();
             initService_._runExit();
         }
 
         void _runPreinit() {
-            if (mPreinited) return;
-            string systemPath_ =
-                HostingEnvironment.MapPath(@"~");
-            InitService initService_ =
-                __singleton<InitService>._instance();
+            string systemPath_ = HostingEnvironment.MapPath(@"~");
+            InitService initService_ = __singleton<InitService>._instance();
             initService_._runPreinit(systemPath_);
-            mPreinited = true;
         }
 
         void _runInit() {
-            if (mInited) return;
-            mInited = true;
+            InitService initService_ = __singleton<InitService>._instance();
+            initService_._runInit();
         }
-
-        bool mPreinited = false;
-        bool mInited = false;
     }
 }

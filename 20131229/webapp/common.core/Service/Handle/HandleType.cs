@@ -1,20 +1,18 @@
-﻿using System.Collections.Generic;
-
-namespace common.core
+﻿namespace common.core
 {
     public class HandleType : IStream
     {
         public void _serialize(ISerialize nSerialize)
         {
-            nSerialize._serialize
-                (ref mContextOption, "contextOption");
+            nSerialize._serialize(ref mContext, "context");
             nSerialize._serialize(ref mCount, "count");
             nSerialize._serialize(ref mType, "type");
             nSerialize._serialize(ref mId, "id");
         }
 
-        public ContextOption _getContextOption() {
-            return mContextOption;
+        public string _getContext()
+        {
+            return mContext;
         }
 
         public byte _getCount() {
@@ -30,14 +28,13 @@ namespace common.core
         }
 
         public HandleType() {
-            mContextOption = null;
+            mContext = null;
             mCount = 0;
             mType = 0;
             mId = 0;
         }
 
-        ContextOption
-            mContextOption;
+        string mContext;
         byte mCount;
         byte mType;
         uint mId;

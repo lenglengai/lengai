@@ -108,7 +108,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -120,6 +119,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Images\background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -141,17 +144,9 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\account.core\account.core.csproj">
-      <Project>{793c0ab6-17da-48f9-b2bc-cff02b0a8e78}</Project>
-      <Name>account.core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\common.core\common.core.csproj">
       <Project>{34e94cdf-3973-47f5-bb30-8c259cbd36ad}</Project>
       <Name>common.core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\weibo.core\weibo.core.csproj">
-      <Project>{d920bee6-7d8e-4c3c-a04c-bab76ccc66c4}</Project>
-      <Name>weibo.core</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -46,79 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Action\ActionService.cs" />
-    <Compile Include="Action\ActionType_.cs" />
-    <Compile Include="Action\IActionBody.cs" />
-    <Compile Include="Action\ActionHeader.cs" />
-    <Compile Include="Action\Action.cs" />
-    <Compile Include="BoolSave\BoolSave.cs" />
-    <Compile Include="BoolSave\BoolStruct.cs" />
-    <Compile Include="BoolSave\BoolType_.cs" />
-    <Compile Include="BoolSave\CycleBool.cs" />
-    <Compile Include="BoolSave\SerialBool.cs" />
     <Compile Include="Common\GenerateId.cs" />
     <Compile Include="Common\_RunSlot.cs" />
     <Compile Include="Common\__singleton.cs" />
     <Compile Include="Common\__tuple.cs" />
-    <Compile Include="News\News.cs" />
-    <Compile Include="News\NewsMgr.cs" />
-    <Compile Include="Serialize\Json\JsonWriter.cs" />
-    <Compile Include="Service\Setting\ErrorCode_.cs" />
-    <Compile Include="Handle\HandleService.cs" />
-    <Compile Include="Handle\HandleOption.cs" />
-    <Compile Include="Context\ContextService.cs" />
-    <Compile Include="Context\ContextOption.cs" />
-    <Compile Include="Context\ContextId.cs" />
-    <Compile Include="Context\Context.cs" />
-    <Compile Include="Handle\Handle.cs" />
-    <Compile Include="Handle\HandleType.cs" />
-    <Compile Include="Handle\HandleType_.cs" />
-    <Compile Include="Context\IContextId.cs" />
-    <Compile Include="Handle\IRunnable.cs" />
-    <Compile Include="Packet\Packet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialize\Headstream\IHeadstream.cs" />
     <Compile Include="Serialize\Headstream\ISerialize.cs" />
     <Compile Include="Serialize\Headstream\IStream.cs" />
+    <Compile Include="Serialize\Json\JsonWriter.cs" />
     <Compile Include="Serialize\Xml\XmlReader.cs" />
     <Compile Include="Serialize\Xml\XmlWriter.cs" />
-    <Compile Include="Service\Device\DeviceService.cs" />
+    <Compile Include="Service\Handle\Handle.cs" />
+    <Compile Include="Service\Handle\HandleConfig.cs" />
+    <Compile Include="Service\Handle\HandleService.cs" />
+    <Compile Include="Service\Handle\HandleType.cs" />
+    <Compile Include="Service\Handle\HandleType_.cs" />
+    <Compile Include="Service\Handle\IRunnable.cs" />
     <Compile Include="Service\Init\InitService.cs" />
     <Compile Include="Service\Log\LogService.cs" />
     <Compile Include="Service\Setting\SettingService.cs" />
-    <Compile Include="Action\_ServerHandle.cs" />
-    <Compile Include="Action\_RunActionBody.cs" />
-    <Compile Include="Service\Sql\ISqlCommand.cs" />
-    <Compile Include="Service\Sql\ISqlHeadstream.cs" />
-    <Compile Include="Service\Sql\ISqlStream.cs" />
-    <Compile Include="Service\Sql\SqlCommand.cs" />
-    <Compile Include="Service\Sql\SqlDeal_.cs" />
-    <Compile Include="Service\Sql\SqlFieldId_.cs" />
-    <Compile Include="Service\Sql\SqlParameter.cs" />
-    <Compile Include="Service\Sql\SqlReader.cs" />
-    <Compile Include="Service\Sql\SqlService.cs" />
-    <Compile Include="Service\Sql\SqlType_.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="diagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="Config\handleConfig.xml">
+    <Content Include="Config\handle.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Config\log.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Config\contextIds.xml" />
-    <Content Include="Config\settingConfig.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Config\sqlConfig.xml">
+    <Content Include="Config\setting.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
