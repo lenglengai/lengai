@@ -21,7 +21,9 @@ namespace common.core
             }
         }
 
-        public void _addServerHandle(uint nType, _ServerHandle nServerHandle) {
+        public void _addServerHandle
+            (uint nType, _ServerHandle nServerHandle) 
+        {
             if (mServerHandles.ContainsKey(nType)) {
                 LogService logService_ =
                     __singleton<LogService>._instance();

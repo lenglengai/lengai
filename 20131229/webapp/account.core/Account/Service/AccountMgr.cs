@@ -52,32 +52,32 @@ namespace account.core
         }
 
         void _loginAccount(AccountLoginB nAccountLoginB, uint nDeviceType, AccountLoginC nAccountLoginC) {
-            Account account_ = this._loginAccount(nAccountLoginB, nDeviceType);
-            nAccountLoginC.m_tAccountId = (int)nAccountLoginB._getAccountId();
-            nAccountLoginC.m_tNickName = nAccountLoginB._getNick();
-            nAccountLoginC.m_tTicks = nAccountLoginB._getTicks();
-            DeviceStatus deviceStatus_ = account_._getDeviceStatus(nDeviceType);
-            nAccountLoginC.m_tDeviceId = deviceStatus_._getId();
-            nAccountLoginC.m_tDeviceType = (int)deviceStatus_._getType();
+//             Account account_ = this._loginAccount(nAccountLoginB, nDeviceType);
+//             nAccountLoginC.m_tAccountId = (int)nAccountLoginB._getAccountId();
+//             nAccountLoginC.m_tNickName = nAccountLoginB._getNick();
+//             nAccountLoginC.m_tTicks = nAccountLoginB._getTicks();
+//             DeviceStatus deviceStatus_ = account_._getDeviceStatus(nDeviceType);
+//             nAccountLoginC.m_tDeviceId = deviceStatus_._getId();
+//             nAccountLoginC.m_tDeviceType = (int)deviceStatus_._getType();
         }
 
         Account _loginAccount(AccountLoginB nAccountLoginB, uint nDeviceType) {
             Account result_ = null;
-            uint accountId = nAccountLoginB._getAccountId();
-            if (mAccounts.ContainsKey(accountId))
-            {
-                result_ = mAccounts[accountId];
-            }
-            if (null == result_)
-            {
-                result_ = nAccountLoginB._createAccount();
-                result_._addDeviceType(nDeviceType);
-                result_._setAccountMgr(this);
-                AccountCreator accountCreator_ = __singleton<AccountCreator>._instance();
-                accountCreator_._runCreate(result_);
-                result_.m_tRunLogin();
-                mAccounts[accountId] = result_;
-            }
+//             uint accountId = nAccountLoginB._getAccountId();
+//             if (mAccounts.ContainsKey(accountId))
+//             {
+//                 result_ = mAccounts[accountId];
+//             }
+//             if (null == result_)
+//             {
+//                 result_ = nAccountLoginB._createAccount();
+//                 result_._addDeviceType(nDeviceType);
+//                 result_._setAccountMgr(this);
+//                 AccountCreator accountCreator_ = __singleton<AccountCreator>._instance();
+//                 accountCreator_._runCreate(result_);
+//                 result_.m_tRunLogin();
+//                 mAccounts[accountId] = result_;
+//             }
             return result_;
         }
 

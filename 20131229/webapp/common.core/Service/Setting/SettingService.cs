@@ -4,15 +4,13 @@ namespace common.core
 {
     public class SettingService : IHeadstream
     {
-        public void _headSerialize(ISerialize nSerialize)
-        {
+        public void _headSerialize(ISerialize nSerialize) {
             nSerialize._serialize(ref mServerCount, "serverCount");
             nSerialize._serialize(ref mServerId, "serverId");
             nSerialize._serialize(ref mVersion, "version");
         }
 
-        public string _streamName()
-        {
+        public string _streamName() {
             return "settingService";
         }
 
@@ -34,6 +32,10 @@ namespace common.core
 
         public uint _getServerCount() {
             return mServerCount;
+        }
+
+        public bool _checkVersion(uint nVersion) {
+            return (mVersion == nVersion);
         }
 
         public uint _getVersion() {

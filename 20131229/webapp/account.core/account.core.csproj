@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Account\AccountSql\AccountCreateB.cs" />
     <Compile Include="Account\AccountSql\AccountLoginB.cs" />
+    <Compile Include="Account\Message\AccountCreateS.cs" />
     <Compile Include="Account\Message\AccountLoginC.cs" />
     <Compile Include="Account\Service\Account.cs" />
     <Compile Include="Account\Message\AccountError_.cs" />

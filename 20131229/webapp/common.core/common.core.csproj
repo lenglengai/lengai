@@ -34,6 +34,9 @@
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +60,10 @@
     <Compile Include="Common\_RunSlot.cs" />
     <Compile Include="Common\__singleton.cs" />
     <Compile Include="Common\__tuple.cs" />
+    <Compile Include="News\News.cs" />
+    <Compile Include="News\NewsMgr.cs" />
+    <Compile Include="Serialize\Json\JsonWriter.cs" />
+    <Compile Include="Service\Setting\ErrorCode_.cs" />
     <Compile Include="Handle\HandleService.cs" />
     <Compile Include="Handle\HandleOption.cs" />
     <Compile Include="Context\ContextService.cs" />
@@ -68,6 +75,7 @@
     <Compile Include="Handle\HandleType_.cs" />
     <Compile Include="Context\IContextId.cs" />
     <Compile Include="Handle\IRunnable.cs" />
+    <Compile Include="Packet\Packet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialize\Headstream\IHeadstream.cs" />
     <Compile Include="Serialize\Headstream\ISerialize.cs" />

@@ -41,9 +41,9 @@ namespace account.core
 
         public Account _createAccount() {
             Account result_ = new Account();
-            result_._setId(mAccountId);
-            result_._setNick(mNickName);
-            result_._setTicks(DateTime.Now.Ticks);
+//             result_._setId(mAccountId);
+//             result_._setNick(mNickName);
+//             result_._setTicks(DateTime.Now.Ticks);
             return result_;
         }
 
