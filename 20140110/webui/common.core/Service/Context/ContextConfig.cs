@@ -10,20 +10,24 @@ namespace common.core
             nSerialize._serialize(ref mName, "name");
         }
 
-        public string _streamName()
-        {
+        public string _streamName() {
             return "contextConfig";
         }
 
-        public void _initHandle(Handle nHandle)
-        {
+        public void _initHandle(Handle nHandle) {
             foreach (string i in mContexts) {
-
+                this._initContextId(i, nHandle);
             }
         }
 
-        public string _getName()
-        {
+        void _initContextId(string nName, Handle nHandle) {
+            uint id = GenerateId._runCommon(nName);
+            ContextService contextService_ = __singleton<ContextService>._instance();
+            IContextId contextId = contextService_._getContextId(id);
+            nHandle._initContext(contextId);
+        }
+
+        public string _getName() {
             return mName;
         }
 

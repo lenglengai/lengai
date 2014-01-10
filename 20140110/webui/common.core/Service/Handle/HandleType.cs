@@ -22,12 +22,11 @@
         void _initHandle(Handle nHandle)
         {
             ContextConfig contextConfig = new ContextConfig();
-            this._initContext(contextConfig);
-            contextConfig._initHandle(nHandle);
+            //this._initContext(contextConfig);
+            //contextConfig._initHandle(nHandle);
         }
 
-        void _initContext(ContextConfig nContextConfig)
-        {
+        void _initContext(ContextConfig nContextConfig) {
             string contextConfigUrl_ = @"Config/";
             contextConfigUrl_ += mContext;
             contextConfigUrl_ += @"xml";

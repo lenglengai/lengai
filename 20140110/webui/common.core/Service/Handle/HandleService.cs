@@ -14,12 +14,11 @@ namespace common.core
 
         static void _runHandle(object nHandle) {
             Handle handle_ = (Handle)nHandle;
-            //handle_._runHandle();
+            handle_._runHandle();
         }
 
         public void _runPreinit() {
-            InitService initService =
-                __singleton<InitService>._instance();
+            InitService initService = __singleton<InitService>._instance();
             initService.m_tRunInit += this._runInit;
             initService.m_tRunStart += this._runStart;
         }
