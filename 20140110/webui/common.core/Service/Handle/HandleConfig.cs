@@ -12,21 +12,10 @@ namespace common.core
             return @"handleConfig";
         }
 
-        public void _runInit() {
-
-        }
-
         public void _initHandle(HandleService nHandleService) {
-            uint index = 1, count_ = 0;
+            uint index = 1;
             foreach (HandleType i in mHandleTypes) {
-                count_ = i._getCount();
-                nHandleService._addHandleCount(i._getId(), count_);
-                for (byte j = 0; j < count_; ++j)
-                {
-                    Handle handle = new Handle(index, i._getType());
-                    nHandleService._addHandle(index, handle);
-                    ++index;
-                }
+                i._initHandle(nHandleService, ref index);
             }
         }
 
