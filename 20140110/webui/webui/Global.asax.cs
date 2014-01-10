@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.Hosting;
+
+using common.core;
 
 namespace webui
 {
@@ -14,11 +17,38 @@ namespace webui
     {
         protected void Application_Start()
         {
+            this._runPreinit();
             AreaRegistration.RegisterAllAreas();
-
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            this._runInit();
+            this._runStart();
+        }
+
+        protected void Application_End()
+        {
+            InitService initService_ = __singleton<InitService>._instance();
+            initService_._runExit();
+        }
+
+        void _runPreinit()
+        {
+            string systemPath_ = HostingEnvironment.MapPath(@"~");
+            InitService initService_ = __singleton<InitService>._instance();
+            initService_._runPreinit(systemPath_);
+        }
+
+        void _runInit()
+        {
+            InitService initService_ = __singleton<InitService>._instance();
+            initService_._runInit();
+        }
+
+        void _runStart()
+        {
+            InitService initService_ = __singleton<InitService>._instance();
+            initService_._runStart();
         }
     }
 }

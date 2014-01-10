@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<handleConfig>
+  
+  <handleTypes>
+    
+    <__t id="1" type="1" name="action" count="4" context="money" />
+    
+  </handleTypes>
+  
+</handleConfig>
+
