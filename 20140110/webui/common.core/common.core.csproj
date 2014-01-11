@@ -77,16 +77,16 @@
     <Compile Include="Service\Log\LogService.cs" />
     <Compile Include="Service\Setting\SettingService.cs" />
     <Compile Include="Service\Setting\VersionNews.cs" />
-    <Compile Include="Service\Sql\ISqlCommand.cs" />
-    <Compile Include="Service\Sql\ISqlHeadstream.cs" />
-    <Compile Include="Service\Sql\ISqlStream.cs" />
-    <Compile Include="Service\Sql\SqlCommand.cs" />
-    <Compile Include="Service\Sql\SqlDeal_.cs" />
-    <Compile Include="Service\Sql\SqlFieldId_.cs" />
-    <Compile Include="Service\Sql\SqlParameter.cs" />
-    <Compile Include="Service\Sql\SqlReader.cs" />
-    <Compile Include="Service\Sql\SqlService.cs" />
-    <Compile Include="Service\Sql\SqlType_.cs" />
+    <Compile Include="Service\SqlQuery\ISqlCommand.cs" />
+    <Compile Include="Service\SqlQuery\ISqlHeadstream.cs" />
+    <Compile Include="Service\SqlQuery\ISqlStream.cs" />
+    <Compile Include="Service\SqlQuery\SqlCommand.cs" />
+    <Compile Include="Service\SqlQuery\SqlDeal_.cs" />
+    <Compile Include="Service\SqlQuery\SqlFieldId_.cs" />
+    <Compile Include="Service\SqlQuery\SqlParameter.cs" />
+    <Compile Include="Service\SqlQuery\SqlReader.cs" />
+    <Compile Include="Service\SqlQuery\SqlService.cs" />
+    <Compile Include="Service\SqlQuery\SqlType_.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="diagram.cd" />
