@@ -3,15 +3,36 @@
   <Class Name="account.core.AccountService" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAIAAQAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <HashCode>SAAICAQAAAAAAAAAAIAAIQAAAAAAAAAAAAAAAAAAQAA=</HashCode>
       <FileName>Account\Service\AccountService.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="account.core.AccountMgr">
+  <Class Name="account.core.AccountMgr" Collapsed="true">
     <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Account\Service\AccountMgr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="account.core.CONSTS" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Common\CONSTS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="account.core.AccountNews" Collapsed="true">
+    <Position X="2.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Account\News\AccountNews.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="account.core.AccountCreateNews" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Account\News\AccountCreateNews.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Microsoft YaHei UI" Size="9" />

@@ -3,9 +3,8 @@
   
   <handleTypes>
     
-    <__t id="1" type="1" name="action" count="4" context="money" />
+    <__t id="account" type="1" count="4" />
     
   </handleTypes>
   
 </handleConfig>
-

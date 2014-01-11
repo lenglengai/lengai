@@ -8,6 +8,7 @@ using System.Web.Routing;
 using System.Web.Hosting;
 
 using common.core;
+using account.core;
 
 namespace webui
 {
@@ -26,27 +27,26 @@ namespace webui
             this._runStart();
         }
 
-        protected void Application_End()
-        {
+        protected void Application_End() {
             InitService initService_ = __singleton<InitService>._instance();
             initService_._runExit();
         }
 
-        void _runPreinit()
-        {
+        void _runPreinit() {
             string systemPath_ = HostingEnvironment.MapPath(@"~");
             InitService initService_ = __singleton<InitService>._instance();
             initService_._runPreinit(systemPath_);
+
+            AccountService accountService_ = __singleton<AccountService>._instance();
+            accountService_._runPreinit();
         }
 
-        void _runInit()
-        {
+        void _runInit() {
             InitService initService_ = __singleton<InitService>._instance();
             initService_._runInit();
         }
 
-        void _runStart()
-        {
+        void _runStart() {
             InitService initService_ = __singleton<InitService>._instance();
             initService_._runStart();
         }

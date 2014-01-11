@@ -47,10 +47,11 @@ namespace common.core
             mHandleCount[nIndex] = nCount;
         }
 
-        public uint _getHandleCount(uint nIndex) {
+        public uint _getHandleCount(string nIndex) {
             uint result = 0;
-            if (mHandleCount.ContainsKey(nIndex)) {
-                result = mHandleCount[nIndex];
+            uint index_ = GenerateId._runCommon(nIndex);
+            if (mHandleCount.ContainsKey(index_)) {
+                result = mHandleCount[index_];
             } else {
                 LogService logService_ =
                     __singleton<LogService>._instance();

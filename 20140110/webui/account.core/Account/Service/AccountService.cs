@@ -6,20 +6,30 @@ namespace account.core
 {
     public class AccountService
     {
-        public void _runPreinit()
-        {
+        public NewsMgr _createAccount(AccountCreateS nAccountCreateS) {
+            uint hashName_ = GenerateId._runTableId(nAccountCreateS.m_tName);
+            uint accountMgrIndex_ = hashName_ % mHandleCount;
+            AccountMgr accountMgr_ = mAccountMgrs[accountMgrIndex_];
+            return accountMgr_._createAccount(nAccountCreateS);
+        }
+
+        public void _runPreinit() {
+            InitService initService_ = __singleton<InitService>._instance();
+            initService_.m_tRunInit += _runInit;
+        }
+
+        public void _runInit() {
+            this._initHandleCount();
+            this._initAccountMgr();
+        }
+
+        void _initHandleCount() {
             HandleService handleService = __singleton<HandleService>._instance();
-            mHandleCount = handleService._getHandleCount(ActionType_.mAccount_);
+            mHandleCount = handleService._getHandleCount("account");
         }
 
-        public void _runInit()
-        {
-        }
-
-        void _initAccountMgr()
-        {
-            for (uint i = 0; i < mHandleCount; ++i)
-            {
+        void _initAccountMgr() {
+            for (uint i = 0; i < mHandleCount; ++i) {
                 AccountMgr accountMgr_ = new AccountMgr(i);
                 mAccountMgrs[i] = accountMgr_;
             }
@@ -41,6 +51,7 @@ namespace account.core
         }
 
         Dictionary<uint, AccountMgr> mAccountMgrs;
+        const string TAG = "AccountService";
         uint mHandleCount;
     }
 }

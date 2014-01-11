@@ -39,8 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\News\AccountCreateNews.cs" />
+    <Compile Include="Account\News\AccountNews.cs" />
+    <Compile Include="Account\Message\AccountCreateS.cs" />
     <Compile Include="Account\Service\AccountMgr.cs" />
     <Compile Include="Account\Service\AccountService.cs" />
+    <Compile Include="Common\CONSTS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +56,12 @@
       <Name>common.core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\account.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

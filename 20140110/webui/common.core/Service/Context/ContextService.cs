@@ -7,10 +7,8 @@ namespace common.core
         public void _registerContextId(IContextId nContextId) {
             uint contextId_ = nContextId._getContextId();
             if (mContextIds.ContainsKey(contextId_)) {
-                LogService logService_ =
-                    __singleton<LogService>._instance();
-                string logError = string.Format
-                    (@"_registerPropertyId:{0}", contextId_);
+                LogService logService_ = __singleton<LogService>._instance();
+                string logError = string.Format(@"_registerPropertyId:{0}", contextId_);
                 logService_._logError(TAG, logError);
             } else {
                 mContextIds[contextId_] = nContextId;
@@ -22,10 +20,8 @@ namespace common.core
             if (mContextIds.ContainsKey(nContextId)) {
                 result_ = mContextIds[nContextId];
             } else {
-                LogService logService_ =
-                    __singleton<LogService>._instance();
-                string logError = string.Format
-                    (@"_getContextId:{0}", nContextId);
+                LogService logService_ = __singleton<LogService>._instance();
+                string logError = string.Format(@"_getContextId:{0}", nContextId);
                 logService_._logError(TAG, logError);
             }
             return result_;

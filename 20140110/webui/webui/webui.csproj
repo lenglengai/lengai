@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WebUIApiController.cs" />
     <Compile Include="Global.asax.cs">
@@ -158,6 +159,10 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\account.core\account.core.csproj">
+      <Project>{47734712-da71-4c7f-980c-4d15ebf1bf03}</Project>
+      <Name>account.core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\common.core\common.core.csproj">
       <Project>{762f52e2-89c4-4e92-8741-e231052e2d0b}</Project>
       <Name>common.core</Name>
