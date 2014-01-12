@@ -40,7 +40,7 @@ public class Setting {
 	}
 	
 	public Setting() {
-		mHost = "http://192.168.10.38/";
+		mHost = "http://192.168.1.107/";
 		mVersionName = "1.0";
         mVersionCode = 20140101;
         mVersionId = 1;

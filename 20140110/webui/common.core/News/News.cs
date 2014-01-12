@@ -2,7 +2,7 @@
 {
     public abstract class News : IStream
     {
-        public void _serialize(ISerialize nSerialize)
+        public virtual void _serialize(ISerialize nSerialize)
         {
             nSerialize._serialize(ref mId, "id");
         }

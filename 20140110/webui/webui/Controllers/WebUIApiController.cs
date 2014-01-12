@@ -24,9 +24,12 @@ namespace webui.Controllers
 
         protected string _getMessage(NewsMgr nNewMgr) {
             JsonWriter jsonWriter = new JsonWriter();
+            string streamName = nNewMgr._streamName();
+            jsonWriter._selectStream(streamName);
             nNewMgr._headSerialize(jsonWriter);
             jsonWriter._runClose();
-            return jsonWriter._getString();
+            string result =  jsonWriter._getString();
+            return result;
         }
     }
 }

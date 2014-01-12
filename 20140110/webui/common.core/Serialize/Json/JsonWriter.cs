@@ -233,7 +233,9 @@ namespace common.core
             foreach (__t i in nValue)
             {
                 __t t_ = i;
-                this._serialize(ref t_, "__t");
+                mJsonTextWriter.WriteStartObject();
+                t_._serialize(this);
+                mJsonTextWriter.WriteEndObject();
             }
             mJsonTextWriter.WriteEndArray();
         }
@@ -244,15 +246,26 @@ namespace common.core
 
         public string _getString()
         {
+            string result = mStringBuilder.ToString();
+            mStringBuilder.Clear();
+            foreach (char i in result) {
+                if ( (i != '\r') && (i != '\n')
+                    && (i != ' ') && (i != '\t') )
+                {
+                    mStringBuilder.Append(i);
+                }
+            }
             return mStringBuilder.ToString();
         }
 
         public void _selectStream(string nStreamName)
         {
+            mJsonTextWriter.WriteStartObject();
         }
 
         public void _runClose()
         {
+            mJsonTextWriter.WriteEndObject();
             mJsonTextWriter.Close();
             mStringWriter.Close();
         }

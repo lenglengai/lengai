@@ -14,35 +14,26 @@ namespace common.core
             return @"sqlService";
         }
 
-        public bool _runSqlCommand(SqlCommand nSqlCommand) {
-            bool result_ = true;
-            MySqlConnection mySqlConnection_ =
-                new MySqlConnection(mConnectionString);
+        public __tuple<int, string> _runSqlCommand(SqlCommand nSqlCommand) {
+            int errorCode = 0; string errorMessage = null;
+            MySqlConnection mySqlConnection_ = new MySqlConnection(mConnectionString);
             try {
                 mySqlConnection_.Open();
                 MySqlCommand mySqlCommand_ = new MySqlCommand();
                 mySqlCommand_.Connection = mySqlConnection_;
                 string sqlCommand_ = nSqlCommand._sqlCommand();
                 mySqlCommand_.CommandText = sqlCommand_;
-                IList<SqlParameter> fields_ =
-                    nSqlCommand._getFields();
+                IList<SqlParameter> fields_ = nSqlCommand._getFields();
                 foreach (SqlParameter i in fields_) {
-                    string name_ = i._getName();
-                    object value_ = i._getValue();
-                    mySqlCommand_.Parameters.AddWithValue(name_, value_);
+                    mySqlCommand_.Parameters.AddWithValue(i._getName(), i._getValue());
                 }
                 mySqlCommand_.ExecuteNonQuery();
             } catch (MySqlException exception_) {
-                LogService logService_ = 
-                    __singleton<LogService>._instance();
-                string logError = 
-                    string.Format(@"sqlError:{0},{1}", 
-                    exception_.Number, exception_.Message);
-                logService_._logError(logError);
-                result_ = false;
+                errorCode = exception_.Number;
+                errorMessage = exception_.Message;
             }
             mySqlConnection_.Close();
-            return result_;
+            return new __tuple<int, string>(errorCode, errorMessage);
         }
 
         public bool _runSqlCommand(SqlCommand nSqlCommand,

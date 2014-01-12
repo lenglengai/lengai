@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import common.utility.CommonHelper;
+
 import android.util.Log;
 
 public class JsonReader  implements IJsonSerialize {
@@ -167,7 +169,10 @@ public class JsonReader  implements IJsonSerialize {
 	public JsonReader(String nValue) throws JSONException {
 		Log.v("jsonreader", nValue);
 		mObjects = new Stack<JSONObject>();
-		mObject = new JSONObject(nValue);
+		String temp = "{\"news\":[{\"id\":1810600691,\"error\":4}]}";
+		mObject = new JSONObject(temp);
+		String value_ = CommonHelper.getJson(nValue);
+		mObject = new JSONObject(value_);
 	}
 	
 	static final String TAG = JsonReader.class.getSimpleName();

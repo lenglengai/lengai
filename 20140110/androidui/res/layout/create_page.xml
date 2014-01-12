@@ -14,7 +14,6 @@
 		android:paddingLeft="10.0dip"
 		android:gravity="center_vertical"
 		android:hint="@string/username"
-		android:text="zyh"
 		android:singleLine="true"
 		android:maxLength="16"
 		android:inputType="textEmailAddress"  />
@@ -27,7 +26,6 @@
 		android:paddingLeft="10.0dip"
 		android:gravity="center_vertical"
 		android:hint="@string/nickname"
-		android:text="冷言"
 		android:singleLine="true"
 		android:maxLength="16"
 		android:inputType="textPersonName"  />
@@ -40,7 +38,6 @@
 		android:paddingLeft="10.0dip"
 		android:gravity="center_vertical"
 		android:hint="@string/passward"
-		android:text="111111"
 		android:singleLine="true"
 		android:maxLength="16"  />
 		
@@ -52,7 +49,6 @@
 		android:paddingLeft="10.0dip"
 		android:gravity="center_vertical"
 		android:hint="@string/getpassward"
-		android:text="我的密码是什么呀"
 		android:singleLine="true"
 		android:maxLength="16"
 		android:inputType="textLongMessage"  />
