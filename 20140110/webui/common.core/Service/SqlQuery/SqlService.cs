@@ -82,7 +82,7 @@ namespace common.core
         }
 
         void _initConfig() {
-            string sqlUrl_ = @"config/sqlConfig.xml";
+            string sqlUrl_ = @"Config/sql.xml";
             XmlReader xmlReader_ = new XmlReader();
             xmlReader_._openUrl(sqlUrl_);
             xmlReader_._selectStream(_streamName());

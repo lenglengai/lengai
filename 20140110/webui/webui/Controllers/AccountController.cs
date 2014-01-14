@@ -16,8 +16,9 @@ namespace webui.Controllers
         public string _createAccount(AccountCreateS nAccountCreateS)
         {
             NewsMgr newMgr = this._checkPacket(nAccountCreateS);
-            if (null == newMgr){
-
+            if (null == newMgr) {
+                AccountService accountService_ = __singleton<AccountService>._instance();
+                newMgr = accountService_._createAccount(nAccountCreateS);
             }
             return this._getMessage(newMgr);
         }

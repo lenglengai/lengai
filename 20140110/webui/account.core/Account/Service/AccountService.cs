@@ -4,8 +4,16 @@ using common.core;
 
 namespace account.core
 {
-    public class AccountService
+    public class AccountService : IHeadstream
     {
+        public void _headSerialize(ISerialize nSerialize) {
+            nSerialize._serialize(ref mAccountMgrCount, @"accountMgrCount");
+        }
+
+        public string _streamName() {
+            return @"accountService";
+        }
+
         public NewsMgr _createAccount(AccountCreateS nAccountCreateS) {
             uint hashName_ = GenerateId._runTableId(nAccountCreateS.m_tName);
             uint accountMgrIndex_ = hashName_ % mHandleCount;
@@ -16,6 +24,16 @@ namespace account.core
         public void _runPreinit() {
             InitService initService_ = __singleton<InitService>._instance();
             initService_.m_tRunInit += _runInit;
+            this._initConfig();
+        }
+
+        void _initConfig() {
+            string accountConfigUrl_ = @"Config/accountConfig.xml";
+            XmlReader xmlReader_ = new XmlReader();
+            xmlReader_._openUrl(accountConfigUrl_);
+            xmlReader_._selectStream(_streamName());
+            this._headSerialize(xmlReader_);
+            xmlReader_._runClose();
         }
 
         public void _runInit() {
@@ -29,7 +47,7 @@ namespace account.core
         }
 
         void _initAccountMgr() {
-            for (uint i = 0; i < mHandleCount; ++i) {
+            for (uint i = 0; i < mAccountMgrCount; ++i) {
                 AccountMgr accountMgr_ = new AccountMgr(i);
                 mAccountMgrs[i] = accountMgr_;
             }
@@ -47,11 +65,13 @@ namespace account.core
         public AccountService()
         {
             mAccountMgrs = new Dictionary<uint, AccountMgr>();
+            mAccountMgrCount = 0;
             mHandleCount = 0;
         }
 
         Dictionary<uint, AccountMgr> mAccountMgrs;
         const string TAG = "AccountService";
+        uint mAccountMgrCount;
         uint mHandleCount;
     }
 }

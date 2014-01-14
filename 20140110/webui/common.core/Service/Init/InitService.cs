@@ -8,6 +8,8 @@
             loginService_._runPreinit();
             SettingService settingService_ = __singleton<SettingService>._instance();
             settingService_._runPreinit(nPath);
+            SqlService sqlService = __singleton<SqlService>._instance();
+            sqlService._runPreinit();
             HandleService handleService_ = __singleton<HandleService>._instance();
             handleService_._runPreinit();
             mPreinited = true;
