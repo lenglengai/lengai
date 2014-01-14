@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashPage" >
+    
+    <ImageView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/username"
+        android:src="@drawable/test"
+        android:scaleType="fitXY"/>
+    
+    <ViewStub android:id="@+id/spp_login_vs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70.0dip"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginRight="20.0dip"
+        android:layout="@layout/login_page" />
+    
+    <ViewStub android:id="@+id/spp_create_vs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50.0dip"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginRight="20.0dip"
+        android:layout="@layout/create_page" />
+    
+    <ViewStub android:id="@+id/spp_getpassward_vs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60.0dip"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginRight="20.0dip"
+        android:layout="@layout/get_page" />
+            
+    <Button android:id="@+id/spp_getpassward_bt"
+        android:layout_width="match_parent"
+        android:layout_height="35.0dip"
+        android:layout_marginLeft="30dip"
+		android:layout_marginRight="30dip"
+        android:layout_marginBottom="30.0dip"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_background_transparent_selector"
+        android:gravity="center"
+		android:text="@string/get_passward"
+        android:textSize="15.0sp"
+        android:textColor="#ffffffff"
+        android:shadowColor="#ff000000"
+        android:shadowDx="0.0"
+        android:shadowDy="-1.0"
+        android:shadowRadius="1.0" />
+
+    <Button android:id="@+id/spp_register_bt"
+        android:layout_width="match_parent"
+        android:layout_height="35.0dip"
+        android:layout_marginLeft="30dip"
+		android:layout_marginRight="30dip"
+        android:layout_marginBottom="10.0dip"
+        android:background="@drawable/btn_background_transparent_selector"
+        android:gravity="center"
+		android:text="@string/register_account"
+        android:textSize="15.0sp"
+        android:textColor="#ffffffff"
+        android:shadowColor="#ff000000"
+        android:shadowDx="0.0"
+        android:shadowDy="-1.0"
+        android:shadowRadius="1.0"
+        android:layout_above="@id/spp_getpassward_bt"  />
+    
+    <Button android:id="@+id/spp_login_bt"
+        android:layout_width="match_parent"
+        android:layout_height="35.0dip"
+        android:layout_marginLeft="30dip"
+		android:layout_marginRight="30dip"
+		android:layout_marginBottom="10dip"
+		android:background="@drawable/btn_background_transparent_selector"
+		android:gravity="center"
+		android:text="@string/user_login"
+        android:textSize="15.0sp"
+        android:textColor="#ffffffff"
+        android:shadowColor="#ff000000"
+        android:shadowDx="0.0"
+        android:shadowDy="-1.0"
+        android:shadowRadius="1.0"
+        android:layout_above="@id/spp_register_bt" />
+
+</RelativeLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="username">帐	号</string>
+    <string name="nickname">昵	称</string>
+    <string name="passward">密	码</string>
+    <string name="login">登	陆</string>
+    <string name="user_login">用户登陆</string>
+    <string name="register">注	册</string>
+    <string name="register_account">注册帐号</string>
+    <string name="get_passward">找回密码</string>
+    <string name="return_string">返	回</string>
+    <string name="create">创	建</string>
+    <string name="getpassward">找	密</string>
+    <string name="get">找	回</string>
+    <string name="newpassward">新密码</string>
+    <string name="enter_username">亲!麻烦输入用户名</string>
+    <string name="enter_passward">亲!麻烦输入密码</string>
+    <string name="enter_nickname">亲!麻烦输入昵称</string>
+    <string name="enter_getpassward">亲!麻烦输入找密</string>
+</resources>

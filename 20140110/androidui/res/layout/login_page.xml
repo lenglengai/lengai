@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/login_background"
+    android:orientation="vertical" >
+
+	<EditText android:id="@+id/lp_username_et"
+	    android:layout_width="match_parent"
+		android:layout_height="42.0dip"
+		android:layout_marginTop="6dip"
+		android:layout_marginLeft="10dip"
+		android:layout_marginRight="10dip"
+		android:paddingLeft="10.0dip"
+		android:gravity="center_vertical"
+		android:hint="@string/username"
+		android:text="zyh"
+		android:singleLine="true"
+		android:maxLength="16"
+		android:inputType="textEmailAddress"  />
+	
+	<EditText android:id="@+id/lp_passward_et"
+	    android:layout_width="match_parent"
+		android:layout_height="42.0dip"
+		android:layout_marginLeft="10dip"
+		android:layout_marginRight="10dip"
+		android:paddingLeft="10.0dip"
+		android:gravity="center_vertical"
+		android:hint="@string/passward"
+		android:text="111111"
+		android:singleLine="true"
+		android:maxLength="16"
+		android:inputType="textPassword"  />
+	
+	<RelativeLayout android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="10dip"
+	    android:layout_marginRight="10dip" > 
+	    
+	    <Button android:id="@+id/lp_login_bt"
+	        android:layout_width="125.0dip"
+	        android:layout_height="35.0dip"
+	        android:layout_marginRight="5dip"
+	        android:layout_alignParentLeft="true"
+	        android:background="@drawable/btn_background_transparent_selector"
+	        android:gravity="center"
+	        android:text="@string/login"
+	        android:textSize="18.0sp"
+	        android:textColor="#ffffffff"
+	        android:shadowColor="#ff000000"
+	        android:shadowDx="0.0"
+	        android:shadowDy="-1.0"
+	        android:shadowRadius="1.0" />
+	    
+	    <Button android:id="@+id/lp_return_bt"
+	        android:layout_width="125.0dip"
+	        android:layout_height="35.0dip"
+	        android:layout_marginRight="5dip"
+	        android:layout_alignParentRight="true"
+	        android:background="@drawable/btn_background_transparent_selector"
+	        android:gravity="center"
+	        android:text="@string/return_string"
+	        android:textSize="18.0sp"
+	        android:textColor="#ffffffff"
+	        android:shadowColor="#ff000000"
+	        android:shadowDx="0.0"
+	        android:shadowDy="-1.0"
+	        android:shadowRadius="1.0" />
+	    
+	 </RelativeLayout>
+	
+</LinearLayout>
