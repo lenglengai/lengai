@@ -33,6 +33,8 @@ public class CreateRequest extends JsonTask {
         	break;
         case ErrorCode_.mHttpOk_:
             break;
+        case ErrorCode_.mSucess_:
+        	break;
         default: {
         	Context context = this.getContext();
         	String errorMessage = context.getString(R.string.system_error);

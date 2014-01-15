@@ -9,7 +9,7 @@ public class JsonResponse implements IJsonStream {
 	@Override
 	public <T extends IJsonSerialize> void serialize(T nT)
 			throws JSONException {
-		nT.serialize(mId, "id");
+		mId = nT.serialize(mId, "id");
 		IJsonCreator jsonCreator = JsonCreatorMgr._getJsonCreator(mId);
 		mJsonResponse = jsonCreator.createJsonResponse();
 		mJsonResponse.serialize(nT);

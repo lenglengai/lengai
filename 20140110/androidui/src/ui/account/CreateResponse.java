@@ -14,7 +14,7 @@ public class CreateResponse implements IJsonResponse {
 	@Override
 	public <T extends IJsonSerialize> void serialize(T nT)
 			throws JSONException {
-		nT.serialize(mError, "error");
+		mError = nT.serialize(mError, "error");
 	}
 
 	@Override
