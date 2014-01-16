@@ -28,8 +28,7 @@ namespace webui.Controllers
             jsonWriter._selectStream(streamName);
             nNewMgr._headSerialize(jsonWriter);
             jsonWriter._runClose();
-            string result =  jsonWriter._getString();
-            return result;
+            return jsonWriter._getString();
         }
     }
 }
