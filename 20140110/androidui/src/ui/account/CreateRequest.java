@@ -26,15 +26,17 @@ public class CreateRequest extends JsonTask {
         }
         switch (result.getErrorCode()) {
         case ErrorCode_.mHttpIO_: {
-        	String errorMessage = mContext.getString(R.string.connection_error);
-            CommonHelper.notify(mContext, errorMessage);
+        	Context context = this.getContext();
+        	String errorMessage = context.getString(R.string.connection_error);
+            CommonHelper.notify(context, errorMessage);
             }
         	break;
         case ErrorCode_.mHttpOk_:
             break;
         default: {
-        	String errorMessage = mContext.getString(R.string.system_error);
-        	CommonHelper.notify(mContext, errorMessage);
+        	Context context = this.getContext();
+        	String errorMessage = context.getString(R.string.system_error);
+        	CommonHelper.notify(context, errorMessage);
         	}
         	break;
         }
@@ -42,8 +44,9 @@ public class CreateRequest extends JsonTask {
     
     @Override
     protected void onPreExecute() {
-        mProgressDialog = new ProgressDialog(mContext);
-        String message_ = mContext.getString(R.string.user_creating);
+    	Context context = this.getContext();
+        mProgressDialog = new ProgressDialog(context);
+        String message_ = context.getString(R.string.user_creating);
 		mProgressDialog.setMessage(message_);
         mProgressDialog.setIndeterminate(true);
         mProgressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -61,7 +64,8 @@ public class CreateRequest extends JsonTask {
         if (values.length > 0) {
             final int value = values[0];
             if (value == 1) {
-                String message_ = mContext.getString(R.string.user_creating_val);
+            	Context context = this.getContext();
+                String message_ = context.getString(R.string.user_creating_val);
                 mProgressDialog.setMessage(message_);
             }
         }
@@ -97,6 +101,5 @@ public class CreateRequest extends JsonTask {
     String mPassward;
     String mName;
     String mNick;
-    Context mContext;
 	
 }

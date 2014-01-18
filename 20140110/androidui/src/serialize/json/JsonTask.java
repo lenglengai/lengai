@@ -43,6 +43,10 @@ public abstract class JsonTask extends AsyncTask<Void, Integer, RequestResult> i
 		mContext = nContext;
 	}
 	
+	protected Context getContext() {
+		return mContext;
+	}
+	
 	public JsonTask() {
         Setting setting = AppContext.getSetting();
         mVersionId = setting.getVersionId();
