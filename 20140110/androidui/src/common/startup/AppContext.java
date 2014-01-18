@@ -1,5 +1,6 @@
 package common.startup;
 
+import serialize.json.JsonCreatorMgr;
 import common.utility.Setting;
 
 import android.app.Application;
@@ -18,6 +19,7 @@ public class AppContext extends Application {
 		AppContext.mInstance = this;
 		mSetting = new Setting();
 		mSetting.runInit(this);
+		JsonCreatorMgr.runInit();
 	}
 	
 	public static Setting getSetting() {

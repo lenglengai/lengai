@@ -1,10 +1,7 @@
 package common.startup;
 
 import ui.account.CreateRequest;
-import ui.account.LoginRequest;
-
 import common.utility.CommonHelper;
-import common.utility.Setting;
 import common.utility.TextChangeListener;
 import android.os.Bundle;
 import android.app.Activity;
@@ -131,10 +128,6 @@ public class SplashPage extends Activity {
         	CommonHelper.notify(this, enterPassward);
         	return;
         }
-        Setting setting = AppContext.getSetting();
-        int deviceId = setting.getDeviceId();
-        LoginRequest loginRequest = new LoginRequest(mLUserNameS, mLPasswardS, deviceId);
-        loginRequest.execute();
     }
     
     ViewStub mLoginViewStub;
@@ -226,7 +219,7 @@ public class SplashPage extends Activity {
         	return;
         }
         CreateRequest createRequest = new CreateRequest
-        		(mCUserNameS, mCNickNameS, mCPasswardS, mCGetPasswardS);
+        		(SplashPage.this, mCUserNameS, mCNickNameS, mCPasswardS, mCGetPasswardS);
         createRequest.execute();
     }
     

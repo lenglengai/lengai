@@ -2,7 +2,7 @@
 {
     public class VersionNews : CommonNews
     {
-        public override uint _getNewsId()
+        public override int _getNewsId()
         {
             return CONSTS.VERSION;
         }

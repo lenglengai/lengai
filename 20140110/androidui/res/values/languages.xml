@@ -17,4 +17,11 @@
     <string name="enter_passward">亲!麻烦输入密码</string>
     <string name="enter_nickname">亲!麻烦输入昵称</string>
     <string name="enter_getpassward">亲!麻烦输入找密</string>
+    <string name="user_creating">亲!正在创建帐号中，请耐心等候....</string>
+    <string name="user_creating_val">亲!正在验证帐号是否有效，请耐心等候....</string>
+    <string name="connection_error">亲!你的网络不行，连接不上服务器或者服务器维护中</string>
+    <string name="system_error">sorry!亲的客户端出错了,请更新客户端</string>
+    <string name="create_account_sucess">恭喜!亲成功创建帐号您可以登陆客户端啦!</string>
+    <string name="create_username_exit">亲!该用户名已注册，请直接登录!</string>
+        
 </resources>

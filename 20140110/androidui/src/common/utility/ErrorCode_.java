@@ -9,5 +9,6 @@ public class ErrorCode_ {
 	public static final int mHttpParse_ = -3;
 	public static final int mClientProtocol_ = -4;
 	public static final int mEncoding_ = -5;
+	public static final int mCancelled_ = -6;
 	
 }

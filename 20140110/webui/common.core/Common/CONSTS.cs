@@ -3,6 +3,6 @@
     public class CONSTS
     {
         public const string CONTEXT = "common.core";
-        public const uint VERSION = 1;
+        public const int VERSION = 1;
     }
 }

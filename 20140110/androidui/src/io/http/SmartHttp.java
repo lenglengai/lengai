@@ -30,6 +30,7 @@ import common.utility.Setting;
 import serialize.json.IJsonHeadstream;
 import serialize.json.JsonReader;
 import serialize.json.JsonWriter;
+import serialize.json.RequestResult;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -53,7 +54,7 @@ public class SmartHttp {
 			if (errorCode == ErrorCode_.mHttpOk_) {
 				String jsonString = EntityUtils.toString(httpResponse.getEntity(), HTTP.UTF_8);
 				JsonReader jsonReader = new JsonReader(jsonString);
-				//nJsonRespone.headSerialize(jsonReader);
+				nJsonRespone.headSerialize(jsonReader);
 			}
 			else {
 				return new RequestResult(errorCode, httpResponse.getStatusLine().toString());

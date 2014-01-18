@@ -9,9 +9,9 @@
 
         public abstract string _getContext();
 
-        public abstract uint _getNewsId();
+        public abstract int _getNewsId();
 
-        public ulong _getId()
+        public long _getId()
         {
             return mId;
         }
@@ -19,11 +19,11 @@
         public News()
         {
             string context = this._getContext();
-            uint contextId = GenerateId._runCommon(context);
-            uint newsId = this._getNewsId();
+            int contextId = (int)GenerateId._runCommon(context);
+            int newsId = this._getNewsId();
             mId = (contextId << 32) + newsId;
         }
 
-        ulong mId;
+        long mId;
     }
 }

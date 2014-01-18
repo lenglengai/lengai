@@ -10,17 +10,17 @@ namespace account.core
             nSerialize._serialize(ref mError, "error");
         }
 
-        public override uint _getNewsId()
+        public override int _getNewsId()
         {
             return CONSTS.CREATE;
         }
 
-        public void _setError(uint nError)
+        public void _setError(int nError)
         {
             mError = nError;
         }
 
-        public uint _getError()
+        public int _getError()
         {
             return mError;
         }
@@ -30,6 +30,6 @@ namespace account.core
             mError = 0;
         }
 
-        uint mError;
+        int mError;
     }
 }

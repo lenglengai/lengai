@@ -3,10 +3,10 @@
     public class CONSTS
     {
         public const string CONTEXT = "account.core";
-        public const uint ERROR = 1;
-        public const uint SUCESS = 2;
-        public const uint CREATE = 3;
-        public const uint CREATESUCESS = 4;
-        public const uint CREATENAME = 5;
+        public const int ERROR = 1;
+        public const int SUCESS = 2;
+        public const int CREATE = 3;
+        public const int CREATESUCESS = 4;
+        public const int CREATENAME = 5;
     }
 }

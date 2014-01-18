@@ -1,4 +1,4 @@
-package io.http;
+package serialize.json;
 
 public class RequestResult {
 

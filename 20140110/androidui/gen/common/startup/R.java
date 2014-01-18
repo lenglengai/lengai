@@ -67,10 +67,13 @@ public final class R {
         public static final int splash_page=0x7f080000;
     }
     public static final class string {
-        public static final int action_settings=0x7f060012;
-        public static final int app_name=0x7f060011;
-        public static final int char_l=0x7f060014;
+        public static final int action_settings=0x7f060018;
+        public static final int app_name=0x7f060017;
+        public static final int char_l=0x7f06001a;
+        public static final int connection_error=0x7f060013;
         public static final int create=0x7f060009;
+        public static final int create_account_sucess=0x7f060015;
+        public static final int create_username_exit=0x7f060016;
         public static final int enter_getpassward=0x7f060010;
         public static final int enter_nickname=0x7f06000f;
         public static final int enter_passward=0x7f06000e;
@@ -78,7 +81,7 @@ public final class R {
         public static final int get=0x7f06000b;
         public static final int get_passward=0x7f060007;
         public static final int getpassward=0x7f06000a;
-        public static final int hello_world=0x7f060013;
+        public static final int hello_world=0x7f060019;
         public static final int login=0x7f060003;
         public static final int newpassward=0x7f06000c;
         public static final int nickname=0x7f060001;
@@ -86,6 +89,9 @@ public final class R {
         public static final int register=0x7f060005;
         public static final int register_account=0x7f060006;
         public static final int return_string=0x7f060008;
+        public static final int system_error=0x7f060014;
+        public static final int user_creating=0x7f060011;
+        public static final int user_creating_val=0x7f060012;
         public static final int user_login=0x7f060004;
         public static final int username=0x7f060000;
     }
