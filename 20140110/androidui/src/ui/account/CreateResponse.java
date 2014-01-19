@@ -26,10 +26,10 @@ public class CreateResponse implements IJsonResponse {
 	public void runResponse() {
 		if (ACCOUNTCONSTS.CREATESUCESS == mError) {
 			String text = mContext.getString(R.string.create_account_sucess);
-			CommonHelper.notify(mContext, text);
+			CommonHelper.notifyThread(mContext, text);
 		} else if (ACCOUNTCONSTS.CREATENAME == mError) {
 			String text = mContext.getString(R.string.create_username_exit);
-			CommonHelper.notify(mContext, text);
+			CommonHelper.notifyThread(mContext, text);
 		} else {
 		}  
 	}
