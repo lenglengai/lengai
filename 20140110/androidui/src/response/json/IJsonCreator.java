@@ -1,4 +1,5 @@
-package serialize.json;
+package response.json;
+
 
 public interface IJsonCreator {
 	

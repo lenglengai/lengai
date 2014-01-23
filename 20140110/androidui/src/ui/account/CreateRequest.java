@@ -12,9 +12,9 @@ import common.startup.R;
 import common.utility.CommonHelper;
 import common.utility.ErrorCode_;
 
+import response.json.JsonTask;
+import response.json.RequestResult;
 import serialize.json.IJsonSerialize;
-import serialize.json.JsonTask;
-import serialize.json.RequestResult;
 
 
 public class CreateRequest extends JsonTask {

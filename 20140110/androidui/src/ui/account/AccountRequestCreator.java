@@ -1,7 +1,7 @@
 package ui.account;
 
-import serialize.json.IJsonCreator;
-import serialize.json.IJsonResponse;
+import response.json.IJsonCreator;
+import response.json.IJsonResponse;
 
 public abstract class AccountRequestCreator implements IJsonCreator {
 

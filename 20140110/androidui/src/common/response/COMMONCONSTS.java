@@ -1,4 +1,4 @@
-package serialize.json;
+package common.response;
 
 public class COMMONCONSTS {
 	

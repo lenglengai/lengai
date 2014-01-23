@@ -1,6 +1,9 @@
-package serialize.json;
+package response.json;
 
 import org.json.JSONException;
+
+import serialize.json.IJsonSerialize;
+import serialize.json.IJsonStream;
 
 import android.content.Context;
 

@@ -1,4 +1,7 @@
-package serialize.json;
+package common.response;
+
+import response.json.IJsonCreator;
+import response.json.IJsonResponse;
 
 public abstract class CommonResponseCreator implements IJsonCreator {
 

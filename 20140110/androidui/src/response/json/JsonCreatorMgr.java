@@ -1,10 +1,12 @@
-package serialize.json;
+package response.json;
 
 import java.util.HashMap;
 import java.util.Map;
 
+
 import ui.account.CreateRequestCreator;
 
+import common.response.VersionResponseCreator;
 import common.utility.GenerateId;
 
 public class JsonCreatorMgr {

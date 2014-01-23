@@ -1,4 +1,4 @@
-package serialize.json;
+package response.json;
 
 public class RequestResult {
 

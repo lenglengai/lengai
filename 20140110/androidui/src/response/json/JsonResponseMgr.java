@@ -1,9 +1,14 @@
-package serialize.json;
+package response.json;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONException;
+
+import serialize.json.IJsonHeadstream;
+import serialize.json.IJsonSerialize;
+
+import common.utility.ErrorCode_;
 
 import android.content.Context;
 
@@ -20,9 +25,10 @@ public class JsonResponseMgr implements IJsonHeadstream {
 		return "jsonResponseMgr";
 	}
 	
-	public void runResponse(){
+	public int runResponse(){
+		int errorCode = ErrorCode_.mSucess_;
 		for (JsonResponse i : mJsonResponses) {
-			i.runResponse();
+			errorCode = i.runResponse();
 		}
 	}
 

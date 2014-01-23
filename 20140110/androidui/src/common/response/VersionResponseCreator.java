@@ -1,4 +1,6 @@
-package serialize.json;
+package common.response;
+
+import response.json.IJsonResponse;
 
 public class VersionResponseCreator extends CommonResponseCreator {
 

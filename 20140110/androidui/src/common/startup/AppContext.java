@@ -1,6 +1,6 @@
 package common.startup;
 
-import serialize.json.JsonCreatorMgr;
+import response.json.JsonCreatorMgr;
 import common.utility.Setting;
 
 import android.app.Application;

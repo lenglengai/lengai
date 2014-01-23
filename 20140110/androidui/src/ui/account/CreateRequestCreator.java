@@ -1,6 +1,6 @@
 package ui.account;
 
-import serialize.json.IJsonResponse;
+import response.json.IJsonResponse;
 
 
 public class CreateRequestCreator extends AccountRequestCreator {
