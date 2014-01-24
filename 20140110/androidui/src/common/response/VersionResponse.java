@@ -2,10 +2,11 @@ package common.response;
 
 import org.json.JSONException;
 
+import common.utility.ErrorCode_;
+
 import response.json.IJsonResponse;
 import serialize.json.IJsonSerialize;
 
-import android.content.Context;
 
 public class VersionResponse implements IJsonResponse {
 	
@@ -16,13 +17,8 @@ public class VersionResponse implements IJsonResponse {
 	}
 	
 	@Override
-	public void setContext(Context nContext) {
-		
-	}
-
-	@Override
-	public void runResponse() {
-		
+	public int runResponse() {
+		return ErrorCode_.mVersion;
 	}
 
 }

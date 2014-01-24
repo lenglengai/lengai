@@ -21,4 +21,5 @@ public class ApiException extends Exception {
     
     final int mErrorCode;
     final String mMessage;
+    
 }

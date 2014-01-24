@@ -27,7 +27,6 @@ import org.json.JSONException;
 import common.startup.AppContext;
 import common.utility.ErrorCode_;
 import common.utility.Setting;
-import response.json.RequestResult;
 import serialize.json.IJsonHeadstream;
 import serialize.json.JsonReader;
 import serialize.json.JsonWriter;
@@ -37,7 +36,7 @@ import android.net.NetworkInfo;
 
 public class SmartHttp {
 
-	public static final RequestResult runPost(IJsonHeadstream nRequest, IJsonHeadstream nJsonRespone) {
+	public static final int runPost(IJsonHeadstream nRequest, IJsonHeadstream nJsonRespone) {
 		Setting setting = AppContext.getSetting();
 		String host = setting.getHost();
     	String requestUrl = host + nRequest.streamName();
@@ -57,20 +56,20 @@ public class SmartHttp {
 				nJsonRespone.headSerialize(jsonReader);
 			}
 			else {
-				return new RequestResult(errorCode, httpResponse.getStatusLine().toString());
+				return errorCode;
 			}
 		} catch (UnsupportedEncodingException e) {
-			return new RequestResult(ErrorCode_.mEncoding_, e.getMessage());
+			return ErrorCode_.mEncoding_;
 		} catch (ClientProtocolException e) {
-			return new RequestResult(ErrorCode_.mClientProtocol_, e.getMessage());
+			return ErrorCode_.mClientProtocol_;
 		} catch (IOException e) {
-			return new RequestResult(ErrorCode_.mHttpIO_, e.getMessage());
+			return ErrorCode_.mHttpIO_;
 		} catch (ParseException e) {
-			return new RequestResult(ErrorCode_.mHttpParse_, e.getMessage());
+			return ErrorCode_.mHttpParse_;
 		} catch (JSONException e) {
-			return new RequestResult(ErrorCode_.mJson_, e.getMessage());
+			return ErrorCode_.mJson_;
 		}
-		return new RequestResult(ErrorCode_.mSucess_, "");
+		return ErrorCode_.mSucess_;
     }
     
     public static final boolean isConnected(final Context context) {
@@ -90,7 +89,7 @@ public class SmartHttp {
         final NetworkInfo info = connec.getActiveNetworkInfo();
         return (info != null) && (info.getType() == ConnectivityManager.TYPE_WIFI);
     }
-        
+    
     static final DefaultHttpClient createHttpClient(final Context context) {
         final HttpParams params = SmartHttp.createHttpParams();
         final DefaultHttpClient client = new DefaultHttpClient(params);

@@ -8,10 +8,6 @@ import org.json.JSONException;
 import serialize.json.IJsonHeadstream;
 import serialize.json.IJsonSerialize;
 
-import common.utility.ErrorCode_;
-
-import android.content.Context;
-
 public class JsonResponseMgr implements IJsonHeadstream {
 	
 	@Override
@@ -25,20 +21,15 @@ public class JsonResponseMgr implements IJsonHeadstream {
 		return "jsonResponseMgr";
 	}
 	
-	public int runResponse(){
-		int errorCode = ErrorCode_.mSucess_;
+	public List<Integer> runResponse(){
+		List<Integer> result = new ArrayList<Integer>();
 		for (JsonResponse i : mJsonResponses) {
-			errorCode = i.runResponse();
+			int errorCode = i.runResponse();
+			result.add(errorCode);
 		}
+		return result;
 	}
 
-	public void setContext(Context nContext){
-		for (JsonResponse i : mJsonResponses) {
-			i.setContext(nContext);
-			i.runResponse();
-		}
-	}
-	
 	public JsonResponseMgr() {
 		mJsonResponses = new ArrayList<JsonResponse>();
 	}

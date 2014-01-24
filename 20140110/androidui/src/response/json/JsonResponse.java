@@ -5,8 +5,6 @@ import org.json.JSONException;
 import serialize.json.IJsonSerialize;
 import serialize.json.IJsonStream;
 
-import android.content.Context;
-
 public class JsonResponse implements IJsonStream {
 
 	@Override
@@ -18,12 +16,8 @@ public class JsonResponse implements IJsonStream {
 		mJsonResponse.serialize(nT);
 	}
 	
-	public void runResponse(){
-		mJsonResponse.runResponse();
-	}
-	
-	public void setContext(Context nContext){
-		mJsonResponse.setContext(nContext);
+	public int runResponse(){
+		return mJsonResponse.runResponse();
 	}
 	
 	public JsonResponse() {

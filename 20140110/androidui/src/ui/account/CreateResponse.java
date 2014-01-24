@@ -2,10 +2,8 @@ package ui.account;
 
 import org.json.JSONException;
 
-import common.startup.R;
-import common.utility.CommonHelper;
+import common.utility.ErrorCode_;
 
-import android.content.Context;
 import response.json.IJsonResponse;
 import serialize.json.IJsonSerialize;
 
@@ -19,18 +17,20 @@ public class CreateResponse implements IJsonResponse {
 
 	@Override
 	public int runResponse() {
+		int result = ErrorCode_.mSucess_;
 		if (ACCOUNTCONSTS.CREATESUCESS == mError) {
-			String text = mContext.getString(R.string.create_account_sucess);
-			CommonHelper.notifyThread(mContext, text);
+			result = ErrorCode_.mCreateSucess;
 		} else if (ACCOUNTCONSTS.CREATENAME == mError) {
-			String text = mContext.getString(R.string.create_username_exit);
-			CommonHelper.notifyThread(mContext, text);
+			result = ErrorCode_.mCreateName;
 		} else {
 		}
+		return result;
 	}
 	
 	public CreateResponse() {
+		mError = ErrorCode_.mSucess_;
 	}
 	
 	int mError;
+	
 }

@@ -23,5 +23,5 @@
     <string name="system_error">sorry!亲的客户端出错了,请更新客户端</string>
     <string name="create_account_sucess">恭喜!亲成功创建帐号您可以登陆客户端啦!</string>
     <string name="create_username_exit">亲!该用户名已注册，请直接登录!</string>
-        
+    <string name="client_version">亲!客户端太旧，请及时更新到最新客户端!</string>
 </resources>
